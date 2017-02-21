@@ -14,6 +14,7 @@
 		3FCAF13A1E5C940C00A80565 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FCAF1381E5C940C00A80565 /* LaunchScreen.storyboard */; };
 		3FCAF1451E5C940C00A80565 /* PunchCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAF1441E5C940C00A80565 /* PunchCardsTests.swift */; };
 		3FCAF1501E5C940C00A80565 /* PunchCardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAF14F1E5C940C00A80565 /* PunchCardsUITests.swift */; };
+		3FCAF15E1E5C94B700A80565 /* PunchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAF15D1E5C94B700A80565 /* PunchCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		3FCAF14B1E5C940C00A80565 /* PunchCardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PunchCardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCAF14F1E5C940C00A80565 /* PunchCardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunchCardsUITests.swift; sourceTree = "<group>"; };
 		3FCAF1511E5C940C00A80565 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FCAF15D1E5C94B700A80565 /* PunchCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +101,9 @@
 			children = (
 				3FCAF12F1E5C940C00A80565 /* AppDelegate.swift */,
 				3FCAF1311E5C940C00A80565 /* ViewController.swift */,
-				3FCAF1331E5C940C00A80565 /* Main.storyboard */,
+				3FCAF15D1E5C94B700A80565 /* PunchCard.swift */,
 				3FCAF1361E5C940C00A80565 /* Assets.xcassets */,
+				3FCAF1331E5C940C00A80565 /* Main.storyboard */,
 				3FCAF1381E5C940C00A80565 /* LaunchScreen.storyboard */,
 				3FCAF13B1E5C940C00A80565 /* Info.plist */,
 			);
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FCAF15E1E5C94B700A80565 /* PunchCard.swift in Sources */,
 				3FCAF1321E5C940C00A80565 /* ViewController.swift in Sources */,
 				3FCAF1301E5C940C00A80565 /* AppDelegate.swift in Sources */,
 			);
