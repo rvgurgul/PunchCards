@@ -14,14 +14,12 @@ class PunchCard: NSCoding
     var name: String
     var image: UIImage
     var punches: [Punch]
-    var total: Int
     
     init(name: String, data: Data, total: Int)
     {
         self.name = name
         self.image = UIImage(data: data)!
         self.punches = [Punch]()
-        self.total = total
     }
     
     required init?(coder aDecoder: NSCoder)
@@ -29,7 +27,6 @@ class PunchCard: NSCoding
         self.name = aDecoder.decodeObject(forKey: "name") as! String
         self.image = aDecoder.decodeObject(forKey: "image") as! UIImage
         self.punches = aDecoder.decodeObject(forKey: "punches") as! [Punch]
-        self.total = aDecoder.decodeObject(forKey: "total") as! Int
     }
     
     func encode(with aCoder: NSCoder)
@@ -37,7 +34,6 @@ class PunchCard: NSCoding
         aCoder.encode(self.name, forKey: "name")
         aCoder.encode(self.image, forKey: "image")
         aCoder.encode(self.punches, forKey: "punches")
-        aCoder.encode(self.total, forKey: "total")
     }
 
     class Punch: NSCoding
