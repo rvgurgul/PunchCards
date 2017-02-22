@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate
 {
+    
+    @IBOutlet weak var cardCollection: UICollectionView!
     
     /*
      GITHUB:
@@ -42,7 +44,24 @@ class ViewController: UIViewController
      */
     
     var punchCards = [PunchCard]()
-
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        <#code#>
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PunchCardCell
+        cell.imageCell.image = punchCards[indexPath.item].image
+        cell.nameLabel.text = punchCards[indexPath.item].name
+        cell.detailLabel.text = "\(punchCards[indexPath.item].punches.count)"
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
+        return punchCards.count
+    }
+    
     var firebaseURL: URL
     {
         return URL(string: "https://punchcards-14936.firebaseio.com/")!
@@ -69,6 +88,9 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        cardCollection.dataSource = self
+        cardCollection.delegate = self
         
         if let data = try? Data(contentsOf: firebaseURL, options: [])
         {
