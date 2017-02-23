@@ -1,0 +1,70 @@
+/* The title that appears on top of the invite widget. The placeholder text
+    will have the third party app name */
+"GINInviteTitle" = "%@ஐப் பயன்படுத்த பிறரை அழைக்கவும்";
+/* The title of the suggestions section in the invite widget. "Suggestions"
+    refers to the suggested invitees. "from Google" means invitees are
+    suggested by Google. */
+"GINInviteSuggestionSectionTitle" = "Google வழங்கும் பரிந்துரைகள்";
+/* The title of the everyone section in the invite widget */
+"GINInviteEveryoneSectionTitle" = "அனைவரும்";
+/* The title of the done button in the invite widget */
+"GINInviteDoneButton" = "முடிந்தது";
+/* The title of the send button in the invite widget */
+"GINInviteSendButton" = "அனுப்பு";
+/* The title of the cancel button in the invite widget */
+"GINInviteCancelButton" = "ரத்துசெய்";
+/* The title of the edit button in the invite widget */
+"GINInviteEditButton" = "திருத்து";
+/* The title of the invitation message view in the invite widget */
+"GINInviteMessageViewTitle" = "செய்தி:";
+/* The placeholder text for the search field in the invide widget */
+"GINInviteSearchFieldPlaceholder" = "பெயர், மின்னஞ்சல்/ஃபோன் எண்ணை சேர்க்கவும்";
+/* The placeholder text for the search field in the invide widget when sending text is disabled */
+"GINInviteSearchFieldPlaceholderSMSDisabled" = "பெயர் அல்லது மின்னஞ்சலைச் சேர்க்கவும்";
+/* The title of the SMS Cost Notice View in the invite widget */
+"GINInviteSMSCostTitle" = "வழக்கமான SMS கட்டணங்கள் பொருந்தும்";
+/* The title of a button that dismisses an alert */
+"GINInviteDismissButtonTitle" = "சரி";
+/* The title of to label in the invite widget. "To" should be followed by
+    a list of people to invite to the app. */
+"GINInviteToLabel" = "பெறுநர்:";
+/* The title of more button in the invite widget. The placeholder "+%ld"
+    represents the number of people to invite to the app. */
+"GINInviteMoreButtonTitle" = "+%ld பேர்";
+/* The title of label in channel picker view cell when its type is
+    notification */
+"GINInviteChannelPickerViewCellNotificationLabel" = "Google மூலம்";
+/* The accessibility notification used when the user press on the send
+    button */
+"GINInviteAccessibilitySendingNotification" = "அனுப்புகிறது";
+/* The accissibility label for the hide keyboard button */
+"GINInviteHideKeyboardAccessibilityLabel" = "விசைப்பலகையை மறை";
+/* The error message displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorMessage" = "செய்தியில் %lu எழுத்துக்குறிகளுக்கு மேல் இருக்கக் கூடாது";
+/* The error title displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorTitle" = "பிழை";
+/* The accessibility notification message that plays when someone is selected.
+    The first argument is the person name */
+"GINInviteACLSelected" = "%@ தேர்ந்தெடுக்கப்பட்டார்";
+/* The accessibility notification message that plays when someone is deleted.
+    The first argument is the person name. */
+"GINInviteACLDeleted" = "%@ நீக்கப்பட்டார்";
+/* Singular form of character */
+"GINInviteCharacterSingular" = "எழுத்துக்குறி";
+/* Plural form of character */
+"GINInviteCharacterPlural" = "எழுத்துக்குறிகள்";
+/* The accessibility notification message that plays when the user starts
+    typing or when there are a few characters remaining. The first argument is
+    the number of characters. The second argument is either "character" or
+    "characters", depending on the number of characters. */
+"GINInviteMessageRemainCountNotificationLabel" = "%@ %@ மீதமுள்ளது";
+/* The accessibility notification message that plays when the user exceeds
+    character limit. The first argument is the number of characters.
+    The second argument is either "character" or "characters", depending on the
+     number of characters. */
+"GINInviteMessageExceedCountNotificationLabel" = "எழுத்து வரம்பை விட %@ %@ அதிகம்";
+/* The accessibility label for deleting an invitee. The second argument is the
+    person name. */
+"GINInviteDeleteContact" = "%@ஐ நீக்கு";
+/* The placeholder text for the message view in the invide widget */
+"GINInviteMessageViewPlaceholder" = "செய்தியைச் சேர்";

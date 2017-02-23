@@ -1,0 +1,62 @@
+/* The text displayed on Accept buttons that will appear when the user has selected a number of Google+ Circles for the purpose of sharing a post. Tapping the Accept button will confirm his selection. */
+"GPPCommonSharedAccept" = "接受";
+
+/* The text displayed on the description for the All Circles ACL. */
+"GPPCommonSharedAllCirclesDescription" = "如果勾选，则会包括你未来新增的圈子。";
+
+/* The text displayed on Cancel buttons. */
+"GPPCommonSharedCancel" = "取消";
+
+/* The text in the ACL Circle count when it has multiple people. Also used by "Add to circles" feature to add multiple people to a circle.*/
+"GPPCommonSharedCircleCountMulti" = "%d个人";
+
+/* The text in the ACL Circle count when it is just one person. Also used by "Add to circles" feature to add a single person to a circle.*/
+"GPPCommonSharedCircleCountSingle" = "1个人";
+
+/* The text displayed in the section header for Circles in the ACL Picker View. */
+"GPPCommonSharedCircles" = "圈子";
+
+/* the text displayed in the section header for Device Contacts in the ACL Search View. */
+"GPPCommonSharedDeviceContacts" = "来自你的设备";
+
+/* The text displayed on the description of the Domain Restricted Cell. */
+"GPPCommonSharedDomainRestrictedDescription" = "禁止在 %@ 之外分享此信息";
+
+/* The text displayed on the title of the Domain Restricted Cell. */
+"GPPCommonSharedDomainRestrictedTitle" = "仅限 %@";
+
+/* the text displayed on the section header for Google Contacts in the ACL Search View. */
+"GPPCommonSharedGoogleContacts" = "来自 Google";
+
+/* The text displayed on Done buttons. */
+"GPPCommonSharedDone" = "完成";
+
+/* The text displayed on OK buttons. */
+"GPPCommonSharedOK" = "确定";
+
+/* The text displayed on the section header for People in the ACL Picker View. */
+"GPPCommonSharedPeople" = "人";
+
+/* The text appended to the suggested ACL entry annotation (see GPPCommonSharedSuggested) that displays the number of people in common with the suggested user. */
+"GPPCommonSharedPeopleInCommonFormat" = "：%lu个共同的朋友";
+
+/* The text displayed on the header of the Underage Warning Alert View. */
+"GPPCommonSharedPublic" = "公开";
+
+/* Placeholder text shown in recipients search field when no recipients have been added. (30 chars max) */
+"GPPCommonSharedSearchFieldPlaceholder" = "输入姓名、电子邮件或圈子";
+
+/* The test displayed when offering to share a post via G+ to an unknown user. */
+"GPPCommonSharedShareViaG+" = "通过 G+ 分享";
+
+/* The text displayed below an ACL entry in the ACL picker view to annotate suggested users who are not in the user's circles or contacts. */
+"GPPCommonSharedSuggested" = "推荐";
+
+/* The text displayed in the section header for ACL Suggestions in the ACL Picker View. */
+"GPPCommonSharedSuggestions" = "建议";
+
+/* The text displayed on the body of the Underage Warning Alert View. */
+"GPPCommonSharedUnderageWarning" = "当你公开分享内容时，你未添加到自己圈子中的人将可以查看你的信息，或许还能发表评论。";
+
+/* The text displayed in the section header for Unknown Email in the ACL Search View. */
+"GPPCommonSharedUnknownEmail" = "你添加的电子邮件";

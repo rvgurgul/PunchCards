@@ -1,0 +1,70 @@
+/* The title that appears on top of the invite widget. The placeholder text
+    will have the third party app name */
+"GINInviteTitle" = "Позови људе у %@";
+/* The title of the suggestions section in the invite widget. "Suggestions"
+    refers to the suggested invitees. "from Google" means invitees are
+    suggested by Google. */
+"GINInviteSuggestionSectionTitle" = "Google-ови предлози";
+/* The title of the everyone section in the invite widget */
+"GINInviteEveryoneSectionTitle" = "Сви";
+/* The title of the done button in the invite widget */
+"GINInviteDoneButton" = "Готово";
+/* The title of the send button in the invite widget */
+"GINInviteSendButton" = "ПОШАЉИ";
+/* The title of the cancel button in the invite widget */
+"GINInviteCancelButton" = "Откажи";
+/* The title of the edit button in the invite widget */
+"GINInviteEditButton" = "Измени";
+/* The title of the invitation message view in the invite widget */
+"GINInviteMessageViewTitle" = "Порука:";
+/* The placeholder text for the search field in the invide widget */
+"GINInviteSearchFieldPlaceholder" = "Унесите име, имејл адресу или телефон";
+/* The placeholder text for the search field in the invide widget when sending text is disabled */
+"GINInviteSearchFieldPlaceholderSMSDisabled" = "Унесите име или имејл адресу";
+/* The title of the SMS Cost Notice View in the invite widget */
+"GINInviteSMSCostTitle" = "Важе стандардне тарифе за SMS-ове";
+/* The title of a button that dismisses an alert */
+"GINInviteDismissButtonTitle" = "У реду";
+/* The title of to label in the invite widget. "To" should be followed by
+    a list of people to invite to the app. */
+"GINInviteToLabel" = "Прималац";
+/* The title of more button in the invite widget. The placeholder "+%ld"
+    represents the number of people to invite to the app. */
+"GINInviteMoreButtonTitle" = "+ још %ld";
+/* The title of label in channel picker view cell when its type is
+    notification */
+"GINInviteChannelPickerViewCellNotificationLabel" = "Преко Google-а";
+/* The accessibility notification used when the user press on the send
+    button */
+"GINInviteAccessibilitySendingNotification" = "Шаље се";
+/* The accissibility label for the hide keyboard button */
+"GINInviteHideKeyboardAccessibilityLabel" = "Сакриј тастатуру";
+/* The error message displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorMessage" = "Максималан број знакова у поруци: %lu";
+/* The error title displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorTitle" = "Грешка";
+/* The accessibility notification message that plays when someone is selected.
+    The first argument is the person name */
+"GINInviteACLSelected" = "%@ је изабран/а";
+/* The accessibility notification message that plays when someone is deleted.
+    The first argument is the person name. */
+"GINInviteACLDeleted" = "%@ је избрисан/а";
+/* Singular form of character */
+"GINInviteCharacterSingular" = "знак";
+/* Plural form of character */
+"GINInviteCharacterPlural" = "знакова";
+/* The accessibility notification message that plays when the user starts
+    typing or when there are a few characters remaining. The first argument is
+    the number of characters. The second argument is either "character" or
+    "characters", depending on the number of characters. */
+"GINInviteMessageRemainCountNotificationLabel" = "Преостаје %@ %@";
+/* The accessibility notification message that plays when the user exceeds
+    character limit. The first argument is the number of characters.
+    The second argument is either "character" or "characters", depending on the
+     number of characters. */
+"GINInviteMessageExceedCountNotificationLabel" = "Ограничење броја знакова је премашено за %@ %@";
+/* The accessibility label for deleting an invitee. The second argument is the
+    person name. */
+"GINInviteDeleteContact" = "Избриши %@";
+/* The placeholder text for the message view in the invide widget */
+"GINInviteMessageViewPlaceholder" = "Унесите поруку";

@@ -1,0 +1,70 @@
+/* The title that appears on top of the invite widget. The placeholder text
+    will have the third party app name */
+"GINInviteTitle" = "%@に招待する";
+/* The title of the suggestions section in the invite widget. "Suggestions"
+    refers to the suggested invitees. "from Google" means invitees are
+    suggested by Google. */
+"GINInviteSuggestionSectionTitle" = "Googleからのおすすめ";
+/* The title of the everyone section in the invite widget */
+"GINInviteEveryoneSectionTitle" = "全員";
+/* The title of the done button in the invite widget */
+"GINInviteDoneButton" = "完了";
+/* The title of the send button in the invite widget */
+"GINInviteSendButton" = "送信";
+/* The title of the cancel button in the invite widget */
+"GINInviteCancelButton" = "キャンセル";
+/* The title of the edit button in the invite widget */
+"GINInviteEditButton" = "編集";
+/* The title of the invitation message view in the invite widget */
+"GINInviteMessageViewTitle" = "メッセージ:";
+/* The placeholder text for the search field in the invide widget */
+"GINInviteSearchFieldPlaceholder" = "名前、メール、電話番号を入力";
+/* The placeholder text for the search field in the invide widget when sending text is disabled */
+"GINInviteSearchFieldPlaceholderSMSDisabled" = "名前かメールを入力";
+/* The title of the SMS Cost Notice View in the invite widget */
+"GINInviteSMSCostTitle" = "通常のSMS料金がかかります";
+/* The title of a button that dismisses an alert */
+"GINInviteDismissButtonTitle" = "OK";
+/* The title of to label in the invite widget. "To" should be followed by
+    a list of people to invite to the app. */
+"GINInviteToLabel" = "宛先";
+/* The title of more button in the invite widget. The placeholder "+%ld"
+    represents the number of people to invite to the app. */
+"GINInviteMoreButtonTitle" = "%ld人招待";
+/* The title of label in channel picker view cell when its type is
+    notification */
+"GINInviteChannelPickerViewCellNotificationLabel" = "Googleから";
+/* The accessibility notification used when the user press on the send
+    button */
+"GINInviteAccessibilitySendingNotification" = "送信中";
+/* The accissibility label for the hide keyboard button */
+"GINInviteHideKeyboardAccessibilityLabel" = "キーボードを非表示にする";
+/* The error message displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorMessage" = "メッセージは%lu文字以内で入力してください";
+/* The error title displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorTitle" = "エラー";
+/* The accessibility notification message that plays when someone is selected.
+    The first argument is the person name */
+"GINInviteACLSelected" = "%@さんは選択済みです";
+/* The accessibility notification message that plays when someone is deleted.
+    The first argument is the person name. */
+"GINInviteACLDeleted" = "%@さんは削除済みです";
+/* Singular form of character */
+"GINInviteCharacterSingular" = "文字";
+/* Plural form of character */
+"GINInviteCharacterPlural" = "文字";
+/* The accessibility notification message that plays when the user starts
+    typing or when there are a few characters remaining. The first argument is
+    the number of characters. The second argument is either "character" or
+    "characters", depending on the number of characters. */
+"GINInviteMessageRemainCountNotificationLabel" = "残り%@%@";
+/* The accessibility notification message that plays when the user exceeds
+    character limit. The first argument is the number of characters.
+    The second argument is either "character" or "characters", depending on the
+     number of characters. */
+"GINInviteMessageExceedCountNotificationLabel" = "文字数制限を%@%@超過しています";
+/* The accessibility label for deleting an invitee. The second argument is the
+    person name. */
+"GINInviteDeleteContact" = "%@さんを削除します";
+/* The placeholder text for the message view in the invide widget */
+"GINInviteMessageViewPlaceholder" = "メッセージを追加";

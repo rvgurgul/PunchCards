@@ -1,0 +1,70 @@
+/* The title that appears on top of the invite widget. The placeholder text
+    will have the third party app name */
+"GINInviteTitle" = "Inviter des personnes sur %@";
+/* The title of the suggestions section in the invite widget. "Suggestions"
+    refers to the suggested invitees. "from Google" means invitees are
+    suggested by Google. */
+"GINInviteSuggestionSectionTitle" = "Suggestions de Google";
+/* The title of the everyone section in the invite widget */
+"GINInviteEveryoneSectionTitle" = "Tous";
+/* The title of the done button in the invite widget */
+"GINInviteDoneButton" = "OK";
+/* The title of the send button in the invite widget */
+"GINInviteSendButton" = "ENVOYER";
+/* The title of the cancel button in the invite widget */
+"GINInviteCancelButton" = "Annuler";
+/* The title of the edit button in the invite widget */
+"GINInviteEditButton" = "Modifier";
+/* The title of the invitation message view in the invite widget */
+"GINInviteMessageViewTitle" = "Message :";
+/* The placeholder text for the search field in the invide widget */
+"GINInviteSearchFieldPlaceholder" = "Ajouter nom, e-mail ou numéro de téléphone";
+/* The placeholder text for the search field in the invide widget when sending text is disabled */
+"GINInviteSearchFieldPlaceholderSMSDisabled" = "Ajouter un nom ou une adresse e-mail";
+/* The title of the SMS Cost Notice View in the invite widget */
+"GINInviteSMSCostTitle" = "Les tarifs standards des SMS s'appliquent";
+/* The title of a button that dismisses an alert */
+"GINInviteDismissButtonTitle" = "OK";
+/* The title of to label in the invite widget. "To" should be followed by
+    a list of people to invite to the app. */
+"GINInviteToLabel" = "À";
+/* The title of more button in the invite widget. The placeholder "+%ld"
+    represents the number of people to invite to the app. */
+"GINInviteMoreButtonTitle" = "+%ld de plus";
+/* The title of label in channel picker view cell when its type is
+    notification */
+"GINInviteChannelPickerViewCellNotificationLabel" = "Via Google";
+/* The accessibility notification used when the user press on the send
+    button */
+"GINInviteAccessibilitySendingNotification" = "Envoi en cours";
+/* The accissibility label for the hide keyboard button */
+"GINInviteHideKeyboardAccessibilityLabel" = "Masquer le clavier";
+/* The error message displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorMessage" = "Le message ne doit pas contenir plus de %lu caractères.";
+/* The error title displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorTitle" = "Erreur";
+/* The accessibility notification message that plays when someone is selected.
+    The first argument is the person name */
+"GINInviteACLSelected" = "%@ sélectionné";
+/* The accessibility notification message that plays when someone is deleted.
+    The first argument is the person name. */
+"GINInviteACLDeleted" = "%@ supprimé";
+/* Singular form of character */
+"GINInviteCharacterSingular" = "caractère";
+/* Plural form of character */
+"GINInviteCharacterPlural" = "caractères";
+/* The accessibility notification message that plays when the user starts
+    typing or when there are a few characters remaining. The first argument is
+    the number of characters. The second argument is either "character" or
+    "characters", depending on the number of characters. */
+"GINInviteMessageRemainCountNotificationLabel" = "%@ %@ restant(s)";
+/* The accessibility notification message that plays when the user exceeds
+    character limit. The first argument is the number of characters.
+    The second argument is either "character" or "characters", depending on the
+     number of characters. */
+"GINInviteMessageExceedCountNotificationLabel" = "%@ %@ en trop";
+/* The accessibility label for deleting an invitee. The second argument is the
+    person name. */
+"GINInviteDeleteContact" = "Supprimer %@";
+/* The placeholder text for the message view in the invide widget */
+"GINInviteMessageViewPlaceholder" = "Ajouter un message";

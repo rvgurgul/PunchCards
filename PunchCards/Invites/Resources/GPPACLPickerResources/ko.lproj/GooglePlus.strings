@@ -1,0 +1,62 @@
+/* The text displayed on Accept buttons that will appear when the user has selected a number of Google+ Circles for the purpose of sharing a post. Tapping the Accept button will confirm his selection. */
+"GPPCommonSharedAccept" = "동의";
+
+/* The text displayed on the description for the All Circles ACL. */
+"GPPCommonSharedAllCirclesDescription" = "이 확인란을 선택하면 나중에 추가하는 서클도 포함됩니다.";
+
+/* The text displayed on Cancel buttons. */
+"GPPCommonSharedCancel" = "취소";
+
+/* The text in the ACL Circle count when it has multiple people. Also used by "Add to circles" feature to add multiple people to a circle.*/
+"GPPCommonSharedCircleCountMulti" = "%d명";
+
+/* The text in the ACL Circle count when it is just one person. Also used by "Add to circles" feature to add a single person to a circle.*/
+"GPPCommonSharedCircleCountSingle" = "1명";
+
+/* The text displayed in the section header for Circles in the ACL Picker View. */
+"GPPCommonSharedCircles" = "서클";
+
+/* the text displayed in the section header for Device Contacts in the ACL Search View. */
+"GPPCommonSharedDeviceContacts" = "기기 주소록";
+
+/* The text displayed on the description of the Domain Restricted Cell. */
+"GPPCommonSharedDomainRestrictedDescription" = "소식이 %@ 외부에 공유되지 않게 합니다.";
+
+/* The text displayed on the title of the Domain Restricted Cell. */
+"GPPCommonSharedDomainRestrictedTitle" = "%@(으)로 제한";
+
+/* the text displayed on the section header for Google Contacts in the ACL Search View. */
+"GPPCommonSharedGoogleContacts" = "Google 주소록";
+
+/* The text displayed on Done buttons. */
+"GPPCommonSharedDone" = "완료";
+
+/* The text displayed on OK buttons. */
+"GPPCommonSharedOK" = "확인";
+
+/* The text displayed on the section header for People in the ACL Picker View. */
+"GPPCommonSharedPeople" = "사용자";
+
+/* The text appended to the suggested ACL entry annotation (see GPPCommonSharedSuggested) that displays the number of people in common with the suggested user. */
+"GPPCommonSharedPeopleInCommonFormat" = ": 함께 아는 사람 %lu명";
+
+/* The text displayed on the header of the Underage Warning Alert View. */
+"GPPCommonSharedPublic" = "공개";
+
+/* Placeholder text shown in recipients search field when no recipients have been added. (30 chars max) */
+"GPPCommonSharedSearchFieldPlaceholder" = "이름, 이메일 또는 서클 입력";
+
+/* The test displayed when offering to share a post via G+ to an unknown user. */
+"GPPCommonSharedShareViaG+" = "G+를 통해 공유";
+
+/* The text displayed below an ACL entry in the ACL picker view to annotate suggested users who are not in the user's circles or contacts. */
+"GPPCommonSharedSuggested" = "추천";
+
+/* The text displayed in the section header for ACL Suggestions in the ACL Picker View. */
+"GPPCommonSharedSuggestions" = "추천";
+
+/* The text displayed on the body of the Underage Warning Alert View. */
+"GPPCommonSharedUnderageWarning" = "공개적으로 공유하면 서클에 추가하지 않은 사람들이 내 소식을 보고 댓글을 달 수 있게 됩니다.";
+
+/* The text displayed in the section header for Unknown Email in the ACL Search View. */
+"GPPCommonSharedUnknownEmail" = "추가한 이메일";

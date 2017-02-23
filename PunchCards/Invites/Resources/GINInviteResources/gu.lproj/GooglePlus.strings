@@ -1,0 +1,70 @@
+/* The title that appears on top of the invite widget. The placeholder text
+    will have the third party app name */
+"GINInviteTitle" = "લોકોને %@ માટે આમંત્રિત કરો";
+/* The title of the suggestions section in the invite widget. "Suggestions"
+    refers to the suggested invitees. "from Google" means invitees are
+    suggested by Google. */
+"GINInviteSuggestionSectionTitle" = "Google તરફથી સૂચનાઓ";
+/* The title of the everyone section in the invite widget */
+"GINInviteEveryoneSectionTitle" = "પ્રત્યેક";
+/* The title of the done button in the invite widget */
+"GINInviteDoneButton" = "પૂર્ણ થયું";
+/* The title of the send button in the invite widget */
+"GINInviteSendButton" = "મોકલો";
+/* The title of the cancel button in the invite widget */
+"GINInviteCancelButton" = "રદ કરો";
+/* The title of the edit button in the invite widget */
+"GINInviteEditButton" = "સંપાદિત કરો";
+/* The title of the invitation message view in the invite widget */
+"GINInviteMessageViewTitle" = "સંદેશ:";
+/* The placeholder text for the search field in the invide widget */
+"GINInviteSearchFieldPlaceholder" = "નામ, ઇમેઇલ અથવા ફોન નંબર ઉમેરો";
+/* The placeholder text for the search field in the invide widget when sending text is disabled */
+"GINInviteSearchFieldPlaceholderSMSDisabled" = "નામ અથવા ઇમેઇલ ઉમેરો";
+/* The title of the SMS Cost Notice View in the invite widget */
+"GINInviteSMSCostTitle" = "માનક SMS શુલ્ક લાગુ";
+/* The title of a button that dismisses an alert */
+"GINInviteDismissButtonTitle" = "ઓકે";
+/* The title of to label in the invite widget. "To" should be followed by
+    a list of people to invite to the app. */
+"GINInviteToLabel" = "પ્રતિ";
+/* The title of more button in the invite widget. The placeholder "+%ld"
+    represents the number of people to invite to the app. */
+"GINInviteMoreButtonTitle" = "+%ld વધુ";
+/* The title of label in channel picker view cell when its type is
+    notification */
+"GINInviteChannelPickerViewCellNotificationLabel" = "Google દ્વારા";
+/* The accessibility notification used when the user press on the send
+    button */
+"GINInviteAccessibilitySendingNotification" = "મોકલી રહ્યું છે";
+/* The accissibility label for the hide keyboard button */
+"GINInviteHideKeyboardAccessibilityLabel" = "કીબોર્ડ છુપાવો";
+/* The error message displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorMessage" = "સંદેશ %lu કરતા વધુ વર્ણ ધરાવતો હોવો જોઈએ નહીં";
+/* The error title displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorTitle" = "ભૂલ";
+/* The accessibility notification message that plays when someone is selected.
+    The first argument is the person name */
+"GINInviteACLSelected" = "%@ ને પસંદ કર્યા";
+/* The accessibility notification message that plays when someone is deleted.
+    The first argument is the person name. */
+"GINInviteACLDeleted" = "%@ ને કાઢી નાખ્યા";
+/* Singular form of character */
+"GINInviteCharacterSingular" = "વર્ણ";
+/* Plural form of character */
+"GINInviteCharacterPlural" = "વર્ણો";
+/* The accessibility notification message that plays when the user starts
+    typing or when there are a few characters remaining. The first argument is
+    the number of characters. The second argument is either "character" or
+    "characters", depending on the number of characters. */
+"GINInviteMessageRemainCountNotificationLabel" = "%@ %@ બાકી";
+/* The accessibility notification message that plays when the user exceeds
+    character limit. The first argument is the number of characters.
+    The second argument is either "character" or "characters", depending on the
+     number of characters. */
+"GINInviteMessageExceedCountNotificationLabel" = "%@ %@ ની વર્ણ મર્યાદા વટાવી";
+/* The accessibility label for deleting an invitee. The second argument is the
+    person name. */
+"GINInviteDeleteContact" = "%@ ને કાઢી નાખો";
+/* The placeholder text for the message view in the invide widget */
+"GINInviteMessageViewPlaceholder" = "એક સંદેશ ઉમેરો";

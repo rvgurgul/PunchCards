@@ -1,0 +1,62 @@
+/* The text displayed on Accept buttons that will appear when the user has selected a number of Google+ Circles for the purpose of sharing a post. Tapping the Accept button will confirm his selection. */
+"GPPCommonSharedAccept" = "Прийняти";
+
+/* The text displayed on the description for the All Circles ACL. */
+"GPPCommonSharedAllCirclesDescription" = "Якщо вибрати цей параметр, буде включено кола, які ви додаватимете в майбутньому.";
+
+/* The text displayed on Cancel buttons. */
+"GPPCommonSharedCancel" = "Скасувати";
+
+/* The text in the ACL Circle count when it has multiple people. Also used by "Add to circles" feature to add multiple people to a circle.*/
+"GPPCommonSharedCircleCountMulti" = "Людей: %d";
+
+/* The text in the ACL Circle count when it is just one person. Also used by "Add to circles" feature to add a single person to a circle.*/
+"GPPCommonSharedCircleCountSingle" = "1 людина";
+
+/* The text displayed in the section header for Circles in the ACL Picker View. */
+"GPPCommonSharedCircles" = "Кола";
+
+/* the text displayed in the section header for Device Contacts in the ACL Search View. */
+"GPPCommonSharedDeviceContacts" = "З вашого пристрою";
+
+/* The text displayed on the description of the Domain Restricted Cell. */
+"GPPCommonSharedDomainRestrictedDescription" = "Можна заборонити користувачам за межами домену %@ ділитися публікацією";
+
+/* The text displayed on the title of the Domain Restricted Cell. */
+"GPPCommonSharedDomainRestrictedTitle" = "Обмеження для домену %@";
+
+/* the text displayed on the section header for Google Contacts in the ACL Search View. */
+"GPPCommonSharedGoogleContacts" = "З Google";
+
+/* The text displayed on Done buttons. */
+"GPPCommonSharedDone" = "Готово";
+
+/* The text displayed on OK buttons. */
+"GPPCommonSharedOK" = "OK";
+
+/* The text displayed on the section header for People in the ACL Picker View. */
+"GPPCommonSharedPeople" = "Люди";
+
+/* The text appended to the suggested ACL entry annotation (see GPPCommonSharedSuggested) that displays the number of people in common with the suggested user. */
+"GPPCommonSharedPeopleInCommonFormat" = ": %lu (спільні друзі)";
+
+/* The text displayed on the header of the Underage Warning Alert View. */
+"GPPCommonSharedPublic" = "Для всіх";
+
+/* Placeholder text shown in recipients search field when no recipients have been added. (30 chars max) */
+"GPPCommonSharedSearchFieldPlaceholder" = "Ім’я, ел. адреса чи назва кола";
+
+/* The test displayed when offering to share a post via G+ to an unknown user. */
+"GPPCommonSharedShareViaG+" = "Поділитись у Google+";
+
+/* The text displayed below an ACL entry in the ACL picker view to annotate suggested users who are not in the user's circles or contacts. */
+"GPPCommonSharedSuggested" = "Пропоновані";
+
+/* The text displayed in the section header for ACL Suggestions in the ACL Picker View. */
+"GPPCommonSharedSuggestions" = "Пропозиції";
+
+/* The text displayed on the body of the Underage Warning Alert View. */
+"GPPCommonSharedUnderageWarning" = "Якщо поділитися з усіма в мережі, то користувачі, яких ви не додавали до своїх кіл, зможуть бачити вашу публікацію та коментувати її.";
+
+/* The text displayed in the section header for Unknown Email in the ACL Search View. */
+"GPPCommonSharedUnknownEmail" = "Електронні адреси, які ви додали";

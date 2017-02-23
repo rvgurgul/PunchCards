@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate
 {
@@ -38,74 +39,70 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
      
      Stretch 3: The punch cards will be 100% customizable based on the business needs.
      -
-
-     Richie's User ID: A7988A16-6C89-4811-93D6-BA5A1E048ED9-RGurgul
      
+     UUIDUUID-UUID-UUID-UUID-UUIDUUIDUUID-DeviceName
+     A7988A16-6C89-4811-93D6-BA5A1E048ED9-RGurgul
+
      */
     
     var punchCards = [PunchCard]()
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
-    {
-        <#code#>
-    }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
-    {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PunchCardCell
-        cell.imageCell.image = punchCards[indexPath.item].image
-        cell.nameLabel.text = punchCards[indexPath.item].name
-        cell.detailLabel.text = "\(punchCards[indexPath.item].punches.count)"
-        return cell
-    }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
-    {
-        return punchCards.count
-    }
-    
-    var firebaseURL: URL
-    {
-        return URL(string: "https://punchcards-14936.firebaseio.com/")!
-    }
     
     var userID: String
     {
         //If the user already has a custom id, return it
         if let uuid = UserDefaults.standard.string(forKey: "id")
         {
-            return uuid
+            return uuid + "-" + deviceName
         }
         //Otherwise, generate a new custom id and store it
         else
         {
             let randomID = UUID().uuidString
             UserDefaults.standard.set(randomID, forKey: "id")
-            return randomID
+            return randomID + "-" + deviceName
         }
     }
     
-    var deviceName: String {return UIDevice.current.name}
+    var deviceName: String
+    {
+        return UIDevice.current.name
+    }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        FIRApp.configure()
+        
+        print("ID: \(userID)")
         
         cardCollection.dataSource = self
         cardCollection.delegate = self
-        
-        if let data = try? Data(contentsOf: firebaseURL, options: [])
-        {
-            parse(JSON(data: data))
-        }
         
         if let saved = UserDefaults.standard.array(forKey: "saved") as? [PunchCard]
         {
             punchCards = saved
         }
+
+        
     }
     
-    func parse(_ json: JSON)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
+        
     }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PunchCardCell
+        cell.imageCell.image = punchCards[indexPath.item].image
+        cell.nameLabel.text = punchCards[indexPath.item].name
+        //cell.detailLabel.text = "\(punchCards[indexPath.item].punches.count)"
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
+        return punchCards.count
+    }
 }
 

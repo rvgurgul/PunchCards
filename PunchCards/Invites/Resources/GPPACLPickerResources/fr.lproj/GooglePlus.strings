@@ -1,0 +1,62 @@
+/* The text displayed on Accept buttons that will appear when the user has selected a number of Google+ Circles for the purpose of sharing a post. Tapping the Accept button will confirm his selection. */
+"GPPCommonSharedAccept" = "Accepter";
+
+/* The text displayed on the description for the All Circles ACL. */
+"GPPCommonSharedAllCirclesDescription" = "Si ce paramètre est coché, il s'applique aussi aux cercles ajoutés ultérieurement.";
+
+/* The text displayed on Cancel buttons. */
+"GPPCommonSharedCancel" = "Annuler";
+
+/* The text in the ACL Circle count when it has multiple people. Also used by "Add to circles" feature to add multiple people to a circle.*/
+"GPPCommonSharedCircleCountMulti" = "%d contacts";
+
+/* The text in the ACL Circle count when it is just one person. Also used by "Add to circles" feature to add a single person to a circle.*/
+"GPPCommonSharedCircleCountSingle" = "1 contact";
+
+/* The text displayed in the section header for Circles in the ACL Picker View. */
+"GPPCommonSharedCircles" = "Cercles";
+
+/* the text displayed in the section header for Device Contacts in the ACL Search View. */
+"GPPCommonSharedDeviceContacts" = "Contacts de votre appareil";
+
+/* The text displayed on the description of the Domain Restricted Cell. */
+"GPPCommonSharedDomainRestrictedDescription" = "Empêchez le partage du post hors de %@.";
+
+/* The text displayed on the title of the Domain Restricted Cell. */
+"GPPCommonSharedDomainRestrictedTitle" = "Limiter à %@";
+
+/* the text displayed on the section header for Google Contacts in the ACL Search View. */
+"GPPCommonSharedGoogleContacts" = "Contacts Google";
+
+/* The text displayed on Done buttons. */
+"GPPCommonSharedDone" = "OK";
+
+/* The text displayed on OK buttons. */
+"GPPCommonSharedOK" = "OK";
+
+/* The text displayed on the section header for People in the ACL Picker View. */
+"GPPCommonSharedPeople" = "Contacts";
+
+/* The text appended to the suggested ACL entry annotation (see GPPCommonSharedSuggested) that displays the number of people in common with the suggested user. */
+"GPPCommonSharedPeopleInCommonFormat" = ": %lu en commun";
+
+/* The text displayed on the header of the Underage Warning Alert View. */
+"GPPCommonSharedPublic" = "Public";
+
+/* Placeholder text shown in recipients search field when no recipients have been added. (30 chars max) */
+"GPPCommonSharedSearchFieldPlaceholder" = "Nom, adresse e-mail ou cercle";
+
+/* The test displayed when offering to share a post via G+ to an unknown user. */
+"GPPCommonSharedShareViaG+" = "Partager via Google+";
+
+/* The text displayed below an ACL entry in the ACL picker view to annotate suggested users who are not in the user's circles or contacts. */
+"GPPCommonSharedSuggested" = "Suggestions";
+
+/* The text displayed in the section header for ACL Suggestions in the ACL Picker View. */
+"GPPCommonSharedSuggestions" = "Suggestions";
+
+/* The text displayed on the body of the Underage Warning Alert View. */
+"GPPCommonSharedUnderageWarning" = "Si vous partagez des contenus en mode public, votre post sera visible par des personnes que vous n'avez pas ajoutées à vos cercles et qui pourront le commenter.";
+
+/* The text displayed in the section header for Unknown Email in the ACL Search View. */
+"GPPCommonSharedUnknownEmail" = "Adresses e-mail ajoutées";

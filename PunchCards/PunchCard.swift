@@ -9,55 +9,30 @@
 import Foundation
 import UIKit
 
-class PunchCard: NSCoding
+//These will be created everytime the user loads the app.
+class PunchCard
 {
-    var name: String
-    var image: UIImage
-    var punches: [Punch]
+    var name: String!
+    var image: UIImage!
+    var adminID: String!
+    //var codes: [custom code class]
+    //var rewards: [String:Int]
+                 //["Free Stuff": 5]
     
-    init(name: String, data: Data, total: Int)
+    init(name: String, data: Data)
     {
         self.name = name
         self.image = UIImage(data: data)!
-        self.punches = [Punch]()
     }
     
-    required init?(coder aDecoder: NSCoder)
-    {
-        self.name = aDecoder.decodeObject(forKey: "name") as! String
-        self.image = aDecoder.decodeObject(forKey: "image") as! UIImage
-        self.punches = aDecoder.decodeObject(forKey: "punches") as! [Punch]
-    }
-    
-    func encode(with aCoder: NSCoder)
-    {
-        aCoder.encode(self.name, forKey: "name")
-        aCoder.encode(self.image, forKey: "image")
-        aCoder.encode(self.punches, forKey: "punches")
-    }
-
-    class Punch: NSCoding
-    {
-        var date: Date!
-        var desc: String!
-        
-        init(desc: String)
-        {
-            self.date = Date()
-            self.desc = desc
-        }
-        
-        required init?(coder aDecoder: NSCoder)
-        {
-            self.date = aDecoder.decodeObject(forKey: "date") as! Date
-            self.desc = aDecoder.decodeObject(forKey: "desc") as! String
-        }
-        
-        func encode(with aCoder: NSCoder)
-        {
-            aCoder.encode(date, forKey: "date")
-            aCoder.encode(desc, forKey: "desc")
-        }
-    }
-    
+    /*
+     init(Firebase reference?)
+     
+     get name
+     get image
+     get adminID
+     
+     
+     
+     */
 }

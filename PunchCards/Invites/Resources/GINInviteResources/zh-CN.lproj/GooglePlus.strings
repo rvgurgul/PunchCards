@@ -1,0 +1,70 @@
+/* The title that appears on top of the invite widget. The placeholder text
+    will have the third party app name */
+"GINInviteTitle" = "邀请他人加入 %@";
+/* The title of the suggestions section in the invite widget. "Suggestions"
+    refers to the suggested invitees. "from Google" means invitees are
+    suggested by Google. */
+"GINInviteSuggestionSectionTitle" = "Google 建议的邀请对象";
+/* The title of the everyone section in the invite widget */
+"GINInviteEveryoneSectionTitle" = "所有人";
+/* The title of the done button in the invite widget */
+"GINInviteDoneButton" = "完成";
+/* The title of the send button in the invite widget */
+"GINInviteSendButton" = "发送";
+/* The title of the cancel button in the invite widget */
+"GINInviteCancelButton" = "取消";
+/* The title of the edit button in the invite widget */
+"GINInviteEditButton" = "修改";
+/* The title of the invitation message view in the invite widget */
+"GINInviteMessageViewTitle" = "邮件正文：";
+/* The placeholder text for the search field in the invide widget */
+"GINInviteSearchFieldPlaceholder" = "添加姓名、电子邮件地址或电话号码";
+/* The placeholder text for the search field in the invide widget when sending text is disabled */
+"GINInviteSearchFieldPlaceholderSMSDisabled" = "添加姓名或电子邮件地址";
+/* The title of the SMS Cost Notice View in the invite widget */
+"GINInviteSMSCostTitle" = "需支付标准短信费用";
+/* The title of a button that dismisses an alert */
+"GINInviteDismissButtonTitle" = "确定";
+/* The title of to label in the invite widget. "To" should be followed by
+    a list of people to invite to the app. */
+"GINInviteToLabel" = "收件人";
+/* The title of more button in the invite widget. The placeholder "+%ld"
+    represents the number of people to invite to the app. */
+"GINInviteMoreButtonTitle" = "还有 +%ld 人";
+/* The title of label in channel picker view cell when its type is
+    notification */
+"GINInviteChannelPickerViewCellNotificationLabel" = "通过 Google";
+/* The accessibility notification used when the user press on the send
+    button */
+"GINInviteAccessibilitySendingNotification" = "正在发送";
+/* The accissibility label for the hide keyboard button */
+"GINInviteHideKeyboardAccessibilityLabel" = "隐藏键盘";
+/* The error message displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorMessage" = "正文不得超过 %lu 个字符";
+/* The error title displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorTitle" = "错误";
+/* The accessibility notification message that plays when someone is selected.
+    The first argument is the person name */
+"GINInviteACLSelected" = "已选择%@";
+/* The accessibility notification message that plays when someone is deleted.
+    The first argument is the person name. */
+"GINInviteACLDeleted" = "%@ Deleted";
+/* Singular form of character */
+"GINInviteCharacterSingular" = "字符";
+/* Plural form of character */
+"GINInviteCharacterPlural" = "字符";
+/* The accessibility notification message that plays when the user starts
+    typing or when there are a few characters remaining. The first argument is
+    the number of characters. The second argument is either "character" or
+    "characters", depending on the number of characters. */
+"GINInviteMessageRemainCountNotificationLabel" = "还可以输入 %@ 个%@";
+/* The accessibility notification message that plays when the user exceeds
+    character limit. The first argument is the number of characters.
+    The second argument is either "character" or "characters", depending on the
+     number of characters. */
+"GINInviteMessageExceedCountNotificationLabel" = "已超出字符数限制 %@ 个%@";
+/* The accessibility label for deleting an invitee. The second argument is the
+    person name. */
+"GINInviteDeleteContact" = "删除%@";
+/* The placeholder text for the message view in the invide widget */
+"GINInviteMessageViewPlaceholder" = "添加消息";

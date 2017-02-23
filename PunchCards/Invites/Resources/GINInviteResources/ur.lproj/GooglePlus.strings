@@ -1,0 +1,70 @@
+/* The title that appears on top of the invite widget. The placeholder text
+    will have the third party app name */
+"GINInviteTitle" = "لوگوں کو %@ پر مدعو کریں";
+/* The title of the suggestions section in the invite widget. "Suggestions"
+    refers to the suggested invitees. "from Google" means invitees are
+    suggested by Google. */
+"GINInviteSuggestionSectionTitle" = "Google کی جانب سے تجاویز";
+/* The title of the everyone section in the invite widget */
+"GINInviteEveryoneSectionTitle" = "ہر کوئی";
+/* The title of the done button in the invite widget */
+"GINInviteDoneButton" = "ہوگیا";
+/* The title of the send button in the invite widget */
+"GINInviteSendButton" = "بھیجیں";
+/* The title of the cancel button in the invite widget */
+"GINInviteCancelButton" = "منسوخ کریں";
+/* The title of the edit button in the invite widget */
+"GINInviteEditButton" = "ترمیم کریں";
+/* The title of the invitation message view in the invite widget */
+"GINInviteMessageViewTitle" = "پیغام:";
+/* The placeholder text for the search field in the invide widget */
+"GINInviteSearchFieldPlaceholder" = "نام، ای میل یا فون نمبر شامل کریں";
+/* The placeholder text for the search field in the invide widget when sending text is disabled */
+"GINInviteSearchFieldPlaceholderSMSDisabled" = "نام یا ای میل شامل کریں";
+/* The title of the SMS Cost Notice View in the invite widget */
+"GINInviteSMSCostTitle" = "معیاری SMS چارجز لاگو ہوں گے";
+/* The title of a button that dismisses an alert */
+"GINInviteDismissButtonTitle" = "ٹھیک ہے";
+/* The title of to label in the invite widget. "To" should be followed by
+    a list of people to invite to the app. */
+"GINInviteToLabel" = "بنام";
+/* The title of more button in the invite widget. The placeholder "+%ld"
+    represents the number of people to invite to the app. */
+"GINInviteMoreButtonTitle" = "‎+%ld مزید";
+/* The title of label in channel picker view cell when its type is
+    notification */
+"GINInviteChannelPickerViewCellNotificationLabel" = "Google کے ذریعے";
+/* The accessibility notification used when the user press on the send
+    button */
+"GINInviteAccessibilitySendingNotification" = "بھیجا جا رہا ہے";
+/* The accissibility label for the hide keyboard button */
+"GINInviteHideKeyboardAccessibilityLabel" = "کی بورڈ چھپائیں";
+/* The error message displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorMessage" = "پیغام ‎%lu کریکٹرز سے تجاوز نہیں کرنا چاہئیے";
+/* The error title displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorTitle" = "خرابی";
+/* The accessibility notification message that plays when someone is selected.
+    The first argument is the person name */
+"GINInviteACLSelected" = "%@ کا انتخاب کیا گیا";
+/* The accessibility notification message that plays when someone is deleted.
+    The first argument is the person name. */
+"GINInviteACLDeleted" = "%@ کو حذف کیا گیا";
+/* Singular form of character */
+"GINInviteCharacterSingular" = "کریکٹر";
+/* Plural form of character */
+"GINInviteCharacterPlural" = "کریکٹرز";
+/* The accessibility notification message that plays when the user starts
+    typing or when there are a few characters remaining. The first argument is
+    the number of characters. The second argument is either "character" or
+    "characters", depending on the number of characters. */
+"GINInviteMessageRemainCountNotificationLabel" = "%@ %@ بقایا";
+/* The accessibility notification message that plays when the user exceeds
+    character limit. The first argument is the number of characters.
+    The second argument is either "character" or "characters", depending on the
+     number of characters. */
+"GINInviteMessageExceedCountNotificationLabel" = "%@ %@ کریکٹرز کی حد سے تجاوز کر گیا/گئے";
+/* The accessibility label for deleting an invitee. The second argument is the
+    person name. */
+"GINInviteDeleteContact" = "%@ کو حذف کریں";
+/* The placeholder text for the message view in the invide widget */
+"GINInviteMessageViewPlaceholder" = "ایک پیغام شامل کریں";

@@ -1,0 +1,70 @@
+/* The title that appears on top of the invite widget. The placeholder text
+    will have the third party app name */
+"GINInviteTitle" = "Invitați persoane la %@";
+/* The title of the suggestions section in the invite widget. "Suggestions"
+    refers to the suggested invitees. "from Google" means invitees are
+    suggested by Google. */
+"GINInviteSuggestionSectionTitle" = "Sugestii de la Google";
+/* The title of the everyone section in the invite widget */
+"GINInviteEveryoneSectionTitle" = "Toți";
+/* The title of the done button in the invite widget */
+"GINInviteDoneButton" = "Terminat";
+/* The title of the send button in the invite widget */
+"GINInviteSendButton" = "TRIMITEȚI";
+/* The title of the cancel button in the invite widget */
+"GINInviteCancelButton" = "Anulați";
+/* The title of the edit button in the invite widget */
+"GINInviteEditButton" = "Editați";
+/* The title of the invitation message view in the invite widget */
+"GINInviteMessageViewTitle" = "Mesaj:";
+/* The placeholder text for the search field in the invide widget */
+"GINInviteSearchFieldPlaceholder" = "Introdu numele, e-mailul sau telefonul";
+/* The placeholder text for the search field in the invide widget when sending text is disabled */
+"GINInviteSearchFieldPlaceholderSMSDisabled" = "Introdu numele sau e-mailul";
+/* The title of the SMS Cost Notice View in the invite widget */
+"GINInviteSMSCostTitle" = "Se aplică tarifele standard pentru mesaje SMS";
+/* The title of a button that dismisses an alert */
+"GINInviteDismissButtonTitle" = "OK";
+/* The title of to label in the invite widget. "To" should be followed by
+    a list of people to invite to the app. */
+"GINInviteToLabel" = "Către";
+/* The title of more button in the invite widget. The placeholder "+%ld"
+    represents the number of people to invite to the app. */
+"GINInviteMoreButtonTitle" = "+ alți %ld";
+/* The title of label in channel picker view cell when its type is
+    notification */
+"GINInviteChannelPickerViewCellNotificationLabel" = "Prin Google";
+/* The accessibility notification used when the user press on the send
+    button */
+"GINInviteAccessibilitySendingNotification" = "Se trimite";
+/* The accissibility label for the hide keyboard button */
+"GINInviteHideKeyboardAccessibilityLabel" = "Ascundeți tastatura";
+/* The error message displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorMessage" = "Mesajul nu trebuie să depășească %lu (de) caractere";
+/* The error title displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorTitle" = "Eroare";
+/* The accessibility notification message that plays when someone is selected.
+    The first argument is the person name */
+"GINInviteACLSelected" = "Utilizatorul %@ a fost selectat";
+/* The accessibility notification message that plays when someone is deleted.
+    The first argument is the person name. */
+"GINInviteACLDeleted" = "Utilizatorul %@ a fost șters";
+/* Singular form of character */
+"GINInviteCharacterSingular" = "caracter";
+/* Plural form of character */
+"GINInviteCharacterPlural" = "caractere";
+/* The accessibility notification message that plays when the user starts
+    typing or when there are a few characters remaining. The first argument is
+    the number of characters. The second argument is either "character" or
+    "characters", depending on the number of characters. */
+"GINInviteMessageRemainCountNotificationLabel" = "%@ (de) %@ rămas(e)";
+/* The accessibility notification message that plays when the user exceeds
+    character limit. The first argument is the number of characters.
+    The second argument is either "character" or "characters", depending on the
+     number of characters. */
+"GINInviteMessageExceedCountNotificationLabel" = "Ați depășit limita cu %@ (de) %@";
+/* The accessibility label for deleting an invitee. The second argument is the
+    person name. */
+"GINInviteDeleteContact" = "Ștergeți utilizatorul %@";
+/* The placeholder text for the message view in the invide widget */
+"GINInviteMessageViewPlaceholder" = "Adăugați un mesaj";

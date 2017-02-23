@@ -1,0 +1,70 @@
+/* The title that appears on top of the invite widget. The placeholder text
+    will have the third party app name */
+"GINInviteTitle" = "%@에 사용자 초대";
+/* The title of the suggestions section in the invite widget. "Suggestions"
+    refers to the suggested invitees. "from Google" means invitees are
+    suggested by Google. */
+"GINInviteSuggestionSectionTitle" = "Google에서 추천";
+/* The title of the everyone section in the invite widget */
+"GINInviteEveryoneSectionTitle" = "모두";
+/* The title of the done button in the invite widget */
+"GINInviteDoneButton" = "완료";
+/* The title of the send button in the invite widget */
+"GINInviteSendButton" = "전송";
+/* The title of the cancel button in the invite widget */
+"GINInviteCancelButton" = "취소";
+/* The title of the edit button in the invite widget */
+"GINInviteEditButton" = "수정";
+/* The title of the invitation message view in the invite widget */
+"GINInviteMessageViewTitle" = "메시지:";
+/* The placeholder text for the search field in the invide widget */
+"GINInviteSearchFieldPlaceholder" = "이름, 이메일 또는 전화번호 추가";
+/* The placeholder text for the search field in the invide widget when sending text is disabled */
+"GINInviteSearchFieldPlaceholderSMSDisabled" = "이름 또는 이메일 추가";
+/* The title of the SMS Cost Notice View in the invite widget */
+"GINInviteSMSCostTitle" = "일반 SMS 요금 적용";
+/* The title of a button that dismisses an alert */
+"GINInviteDismissButtonTitle" = "확인";
+/* The title of to label in the invite widget. "To" should be followed by
+    a list of people to invite to the app. */
+"GINInviteToLabel" = "받는사람";
+/* The title of more button in the invite widget. The placeholder "+%ld"
+    represents the number of people to invite to the app. */
+"GINInviteMoreButtonTitle" = "%ld명 더";
+/* The title of label in channel picker view cell when its type is
+    notification */
+"GINInviteChannelPickerViewCellNotificationLabel" = "Google을 통해 전송";
+/* The accessibility notification used when the user press on the send
+    button */
+"GINInviteAccessibilitySendingNotification" = "전송 중";
+/* The accissibility label for the hide keyboard button */
+"GINInviteHideKeyboardAccessibilityLabel" = "키보드 숨기기";
+/* The error message displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorMessage" = "이 메시지는 영문 %lu자를 초과할 수 없습니다.";
+/* The error title displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorTitle" = "오류";
+/* The accessibility notification message that plays when someone is selected.
+    The first argument is the person name */
+"GINInviteACLSelected" = "%@ 선택됨";
+/* The accessibility notification message that plays when someone is deleted.
+    The first argument is the person name. */
+"GINInviteACLDeleted" = "%@ 삭제됨";
+/* Singular form of character */
+"GINInviteCharacterSingular" = "자";
+/* Plural form of character */
+"GINInviteCharacterPlural" = "자";
+/* The accessibility notification message that plays when the user starts
+    typing or when there are a few characters remaining. The first argument is
+    the number of characters. The second argument is either "character" or
+    "characters", depending on the number of characters. */
+"GINInviteMessageRemainCountNotificationLabel" = "%@%@ 남음";
+/* The accessibility notification message that plays when the user exceeds
+    character limit. The first argument is the number of characters.
+    The second argument is either "character" or "characters", depending on the
+     number of characters. */
+"GINInviteMessageExceedCountNotificationLabel" = "글자 수 제한 %@%@ 초과함";
+/* The accessibility label for deleting an invitee. The second argument is the
+    person name. */
+"GINInviteDeleteContact" = "%@ 삭제";
+/* The placeholder text for the message view in the invide widget */
+"GINInviteMessageViewPlaceholder" = "메시지 추가";

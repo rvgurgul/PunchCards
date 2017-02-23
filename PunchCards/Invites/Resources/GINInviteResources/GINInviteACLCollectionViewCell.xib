@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment version="2048" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GINInviteACLCollectionViewCell" id="Kvz-jU-hRw" customClass="GINInviteACLCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="60" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="60" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FXk-y5-s4M">
+                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fSV-Ex-gTA" customClass="GPPAvatarView">
+                                <rect key="frame" x="3" y="3" width="54" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="dpI-8n-SAv"/>
+                                    <constraint firstAttribute="width" constant="54" id="sPO-Py-qQK"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsContentMode" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="disableOverlay" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="27"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableLetterAvatar" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view alpha="0.0" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="YGg-of-TEW" customClass="GINInviteOverlayView">
+                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G7j-od-KUr" customClass="GINInviteChannelImageView">
+                                <rect key="frame" x="44" y="44" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="8vp-RA-okx"/>
+                                    <constraint firstAttribute="width" constant="16" id="gaz-cM-MI6"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fSV-Ex-gTA" secondAttribute="bottom" constant="3" id="1WA-bM-zMh"/>
+                            <constraint firstItem="fSV-Ex-gTA" firstAttribute="top" secondItem="FXk-y5-s4M" secondAttribute="top" constant="3" id="9he-KI-KKs"/>
+                            <constraint firstItem="G7j-od-KUr" firstAttribute="leading" secondItem="FXk-y5-s4M" secondAttribute="leading" constant="44" id="I5C-q0-U2I"/>
+                            <constraint firstItem="G7j-od-KUr" firstAttribute="top" secondItem="FXk-y5-s4M" secondAttribute="top" constant="44" id="I5K-S4-so4"/>
+                            <constraint firstItem="YGg-of-TEW" firstAttribute="top" secondItem="FXk-y5-s4M" secondAttribute="top" id="Jzb-iW-OdM"/>
+                            <constraint firstItem="fSV-Ex-gTA" firstAttribute="leading" secondItem="FXk-y5-s4M" secondAttribute="leading" constant="3" id="aCo-s9-Vno"/>
+                            <constraint firstAttribute="width" constant="60" id="miz-d2-O8h"/>
+                            <constraint firstAttribute="trailing" secondItem="fSV-Ex-gTA" secondAttribute="trailing" constant="3" id="n0b-27-5eU"/>
+                            <constraint firstItem="YGg-of-TEW" firstAttribute="leading" secondItem="FXk-y5-s4M" secondAttribute="leading" id="n2H-NF-DAM"/>
+                            <constraint firstAttribute="bottom" secondItem="YGg-of-TEW" secondAttribute="bottom" id="oTg-Ok-9lA"/>
+                            <constraint firstAttribute="height" constant="60" id="pUc-Bc-oUM"/>
+                            <constraint firstAttribute="trailing" secondItem="YGg-of-TEW" secondAttribute="trailing" id="z4Y-Bc-PmQ"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fiona scotman" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zli-Jo-vjg" customClass="GPPLabel">
+                        <rect key="frame" x="0.0" y="60" width="60" height="40"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="FXk-y5-s4M" firstAttribute="leading" secondItem="Kvz-jU-hRw" secondAttribute="leading" id="EdW-3y-AAW"/>
+                <constraint firstAttribute="trailing" secondItem="Zli-Jo-vjg" secondAttribute="trailing" id="Mny-Fi-DuT"/>
+                <constraint firstItem="Zli-Jo-vjg" firstAttribute="top" secondItem="FXk-y5-s4M" secondAttribute="bottom" id="cJw-66-2gi"/>
+                <constraint firstItem="Zli-Jo-vjg" firstAttribute="leading" secondItem="Kvz-jU-hRw" secondAttribute="leading" id="cYU-nq-pLJ"/>
+                <constraint firstAttribute="bottom" secondItem="Zli-Jo-vjg" secondAttribute="bottom" id="dlI-Nx-iD5"/>
+                <constraint firstItem="Zli-Jo-vjg" firstAttribute="top" secondItem="FXk-y5-s4M" secondAttribute="bottom" id="e1e-90-H6Y"/>
+                <constraint firstAttribute="trailing" secondItem="FXk-y5-s4M" secondAttribute="trailing" id="ukU-oW-zOk"/>
+                <constraint firstItem="FXk-y5-s4M" firstAttribute="top" secondItem="Kvz-jU-hRw" secondAttribute="top" id="yTw-K5-jII"/>
+            </constraints>
+            <size key="customSize" width="70" height="137"/>
+            <connections>
+                <outlet property="avatarView" destination="fSV-Ex-gTA" id="xj9-qD-NDR"/>
+                <outlet property="channelImageView" destination="G7j-od-KUr" id="KlQ-19-bLT"/>
+                <outlet property="displayNameLabel" destination="Zli-Jo-vjg" id="8zp-ng-g53"/>
+                <outlet property="overlayView" destination="YGg-of-TEW" id="PmA-vg-ink"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

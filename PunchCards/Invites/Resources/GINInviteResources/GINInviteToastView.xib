@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment version="2048" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GINInviteToastView">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYb-qf-gsy">
+                    <rect key="frame" x="230" y="0.0" width="60" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="6WK-nG-TsX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="DISMISS">
+                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="dismissButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="F7j-zL-hZV"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder text" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="cyN-0n-LW7">
+                    <rect key="frame" x="17" y="0.0" width="205" height="50"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.14509804546833038" green="0.14509804546833038" blue="0.14509804546833038" alpha="1" colorSpace="deviceRGB"/>
+            <constraints>
+                <constraint firstItem="sYb-qf-gsy" firstAttribute="leading" secondItem="cyN-0n-LW7" secondAttribute="trailing" constant="8" symbolic="YES" id="0MJ-43-KpD"/>
+                <constraint firstItem="cyN-0n-LW7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="17" id="8qh-ts-ING"/>
+                <constraint firstAttribute="trailing" secondItem="sYb-qf-gsy" secondAttribute="trailing" constant="10" id="BUK-Sm-b9t"/>
+                <constraint firstAttribute="bottom" secondItem="sYb-qf-gsy" secondAttribute="bottom" id="OnT-w4-nty"/>
+                <constraint firstItem="cyN-0n-LW7" firstAttribute="top" secondItem="sYb-qf-gsy" secondAttribute="top" id="b9X-bw-Wic"/>
+                <constraint firstItem="sYb-qf-gsy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gKd-3y-Yhf"/>
+                <constraint firstItem="cyN-0n-LW7" firstAttribute="bottom" secondItem="sYb-qf-gsy" secondAttribute="bottom" id="te1-UY-jnt"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="5"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="dismissButton" destination="sYb-qf-gsy" id="PJQ-Jw-d9f"/>
+                <outlet property="toastTextLabel" destination="cyN-0n-LW7" id="Sq5-j3-wrj"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="154"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

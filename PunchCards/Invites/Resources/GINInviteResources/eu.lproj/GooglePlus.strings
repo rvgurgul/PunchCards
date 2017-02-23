@@ -1,0 +1,70 @@
+/* The title that appears on top of the invite widget. The placeholder text
+    will have the third party app name */
+"GINInviteTitle" = "Gonbidatu jendea %@ aplikaziora";
+/* The title of the suggestions section in the invite widget. "Suggestions"
+    refers to the suggested invitees. "from Google" means invitees are
+    suggested by Google. */
+"GINInviteSuggestionSectionTitle" = "Google-ren iradokizunak";
+/* The title of the everyone section in the invite widget */
+"GINInviteEveryoneSectionTitle" = "Guztiak";
+/* The title of the done button in the invite widget */
+"GINInviteDoneButton" = "Eginda";
+/* The title of the send button in the invite widget */
+"GINInviteSendButton" = "BIDALI";
+/* The title of the cancel button in the invite widget */
+"GINInviteCancelButton" = "Utzi";
+/* The title of the edit button in the invite widget */
+"GINInviteEditButton" = "Editatu";
+/* The title of the invitation message view in the invite widget */
+"GINInviteMessageViewTitle" = "Mezua:";
+/* The placeholder text for the search field in the invide widget */
+"GINInviteSearchFieldPlaceholder" = "Gehitu izena, helbidea edo telefonoa";
+/* The placeholder text for the search field in the invide widget when sending text is disabled */
+"GINInviteSearchFieldPlaceholderSMSDisabled" = "Gehitu izena edo helbide elektronikoa";
+/* The title of the SMS Cost Notice View in the invite widget */
+"GINInviteSMSCostTitle" = "SMS mezuen ohiko gastuak aplikatuko dira";
+/* The title of a button that dismisses an alert */
+"GINInviteDismissButtonTitle" = "Ados";
+/* The title of to label in the invite widget. "To" should be followed by
+    a list of people to invite to the app. */
+"GINInviteToLabel" = "Hartzaileak";
+/* The title of more button in the invite widget. The placeholder "+%ld"
+    represents the number of people to invite to the app. */
+"GINInviteMoreButtonTitle" = "eta beste %ld";
+/* The title of label in channel picker view cell when its type is
+    notification */
+"GINInviteChannelPickerViewCellNotificationLabel" = "Google bidez";
+/* The accessibility notification used when the user press on the send
+    button */
+"GINInviteAccessibilitySendingNotification" = "Bidaltzen";
+/* The accissibility label for the hide keyboard button */
+"GINInviteHideKeyboardAccessibilityLabel" = "Ezkutatu teklatua";
+/* The error message displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorMessage" = "Gehienez %lu karaktere izan ditzake mezuak";
+/* The error title displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorTitle" = "Errorea";
+/* The accessibility notification message that plays when someone is selected.
+    The first argument is the person name */
+"GINInviteACLSelected" = "Hautatu da %@";
+/* The accessibility notification message that plays when someone is deleted.
+    The first argument is the person name. */
+"GINInviteACLDeleted" = "Ezabatu da %@";
+/* Singular form of character */
+"GINInviteCharacterSingular" = "karaktere";
+/* Plural form of character */
+"GINInviteCharacterPlural" = "karaktere";
+/* The accessibility notification message that plays when the user starts
+    typing or when there are a few characters remaining. The first argument is
+    the number of characters. The second argument is either "character" or
+    "characters", depending on the number of characters. */
+"GINInviteMessageRemainCountNotificationLabel" = "%@ %@ falta dira";
+/* The accessibility notification message that plays when the user exceeds
+    character limit. The first argument is the number of characters.
+    The second argument is either "character" or "characters", depending on the
+     number of characters. */
+"GINInviteMessageExceedCountNotificationLabel" = "%@ %@. Karaktere-muga gainditu da.";
+/* The accessibility label for deleting an invitee. The second argument is the
+    person name. */
+"GINInviteDeleteContact" = "Ezabatu %@";
+/* The placeholder text for the message view in the invide widget */
+"GINInviteMessageViewPlaceholder" = "Gehitu mezua";

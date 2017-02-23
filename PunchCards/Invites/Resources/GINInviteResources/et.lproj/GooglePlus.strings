@@ -1,0 +1,70 @@
+/* The title that appears on top of the invite widget. The placeholder text
+    will have the third party app name */
+"GINInviteTitle" = "Kutsuge inimesi rakendusse %@";
+/* The title of the suggestions section in the invite widget. "Suggestions"
+    refers to the suggested invitees. "from Google" means invitees are
+    suggested by Google. */
+"GINInviteSuggestionSectionTitle" = "Soovitused Google'ilt";
+/* The title of the everyone section in the invite widget */
+"GINInviteEveryoneSectionTitle" = "Kõik";
+/* The title of the done button in the invite widget */
+"GINInviteDoneButton" = "Valmis";
+/* The title of the send button in the invite widget */
+"GINInviteSendButton" = "SAADA";
+/* The title of the cancel button in the invite widget */
+"GINInviteCancelButton" = "Loobu";
+/* The title of the edit button in the invite widget */
+"GINInviteEditButton" = "Muuda";
+/* The title of the invitation message view in the invite widget */
+"GINInviteMessageViewTitle" = "Sõnum:";
+/* The placeholder text for the search field in the invide widget */
+"GINInviteSearchFieldPlaceholder" = "Lisage nimi, e-posti aadress või telefoninumber";
+/* The placeholder text for the search field in the invide widget when sending text is disabled */
+"GINInviteSearchFieldPlaceholderSMSDisabled" = "Lisage nimi või e-posti aadress";
+/* The title of the SMS Cost Notice View in the invite widget */
+"GINInviteSMSCostTitle" = "Kehtivad tavalised SMSi tasud";
+/* The title of a button that dismisses an alert */
+"GINInviteDismissButtonTitle" = "OK";
+/* The title of to label in the invite widget. "To" should be followed by
+    a list of people to invite to the app. */
+"GINInviteToLabel" = "Adressaadid:";
+/* The title of more button in the invite widget. The placeholder "+%ld"
+    represents the number of people to invite to the app. */
+"GINInviteMoreButtonTitle" = "veel +%ld";
+/* The title of label in channel picker view cell when its type is
+    notification */
+"GINInviteChannelPickerViewCellNotificationLabel" = "Google'i kaudu";
+/* The accessibility notification used when the user press on the send
+    button */
+"GINInviteAccessibilitySendingNotification" = "Saadan";
+/* The accissibility label for the hide keyboard button */
+"GINInviteHideKeyboardAccessibilityLabel" = "Peida klaviatuur";
+/* The error message displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorMessage" = "Sõnum ei tohi olla pikem kui %lu tähemärki";
+/* The error title displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorTitle" = "Viga";
+/* The accessibility notification message that plays when someone is selected.
+    The first argument is the person name */
+"GINInviteACLSelected" = "%@ valitud";
+/* The accessibility notification message that plays when someone is deleted.
+    The first argument is the person name. */
+"GINInviteACLDeleted" = "%@ kustutatud";
+/* Singular form of character */
+"GINInviteCharacterSingular" = "tähemärk";
+/* Plural form of character */
+"GINInviteCharacterPlural" = "tähemärki";
+/* The accessibility notification message that plays when the user starts
+    typing or when there are a few characters remaining. The first argument is
+    the number of characters. The second argument is either "character" or
+    "characters", depending on the number of characters. */
+"GINInviteMessageRemainCountNotificationLabel" = "%@ %@ jäänud";
+/* The accessibility notification message that plays when the user exceeds
+    character limit. The first argument is the number of characters.
+    The second argument is either "character" or "characters", depending on the
+     number of characters. */
+"GINInviteMessageExceedCountNotificationLabel" = "%@ %@ ületab tähemärgipiirangut";
+/* The accessibility label for deleting an invitee. The second argument is the
+    person name. */
+"GINInviteDeleteContact" = "Kustuta %@";
+/* The placeholder text for the message view in the invide widget */
+"GINInviteMessageViewPlaceholder" = "Lisage sõnum";

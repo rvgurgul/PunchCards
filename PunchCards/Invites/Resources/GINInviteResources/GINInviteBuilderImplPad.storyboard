@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="UCw-SV-umc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <scenes>
+        <!--Invite People Picker View Controller-->
+        <scene sceneID="0CX-Em-CZ2">
+            <objects>
+                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="UCw-SV-umc" customClass="GINInvitePeoplePickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x4y-Dt-GEZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="sVt-tt-jJu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U1F-Z1-bjT">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUc-PV-nsF">
+                                <rect key="frame" x="134" y="162" width="500" height="700"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLi-sU-2qV">
+                                        <rect key="frame" x="0.0" y="0.0" width="500" height="44"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="barTintColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                        <textAttributes key="titleTextAttributes">
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        </textAttributes>
+                                        <items>
+                                            <navigationItem title="Invite" id="Ber-UF-ejf">
+                                                <barButtonItem key="leftBarButtonItem" image="ic_close_24.png" id="puC-8a-3HF">
+                                                    <connections>
+                                                        <action selector="closeTapped:" destination="UCw-SV-umc" id="o5i-bY-Ad5"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                                <barButtonItem key="rightBarButtonItem" image="ic_send_24.png" id="bTg-Ik-FVn">
+                                                    <connections>
+                                                        <action selector="sendTapped:forEvent:" destination="UCw-SV-umc" id="9dg-Ya-uk3"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7lk-bs-ZJf" customClass="GPPVerticalLayoutView">
+                                        <rect key="frame" x="0.0" y="44" width="500" height="656"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="useFlexibleHeight" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7lk-bs-ZJf" secondAttribute="trailing" id="5Wl-cs-19S"/>
+                                    <constraint firstItem="oLi-sU-2qV" firstAttribute="leading" secondItem="7lk-bs-ZJf" secondAttribute="leading" id="AHG-1S-paA"/>
+                                    <constraint firstItem="7lk-bs-ZJf" firstAttribute="leading" secondItem="aUc-PV-nsF" secondAttribute="leading" id="duM-qa-ZYb"/>
+                                    <constraint firstAttribute="bottom" secondItem="7lk-bs-ZJf" secondAttribute="bottom" id="i53-lC-hFr"/>
+                                    <constraint firstItem="oLi-sU-2qV" firstAttribute="bottom" secondItem="7lk-bs-ZJf" secondAttribute="top" id="m1s-Ly-mxG"/>
+                                    <constraint firstItem="oLi-sU-2qV" firstAttribute="trailing" secondItem="7lk-bs-ZJf" secondAttribute="trailing" id="wJE-0J-Ebc"/>
+                                    <constraint firstItem="7lk-bs-ZJf" firstAttribute="top" secondItem="aUc-PV-nsF" secondAttribute="top" constant="44" id="x03-he-GFb"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="aUc-PV-nsF" firstAttribute="centerY" secondItem="U1F-Z1-bjT" secondAttribute="centerY" id="3Af-Up-4eF"/>
+                            <constraint firstItem="aUc-PV-nsF" firstAttribute="centerX" secondItem="U1F-Z1-bjT" secondAttribute="centerX" id="3cL-23-0Vw"/>
+                            <constraint firstItem="aUc-PV-nsF" firstAttribute="top" secondItem="x4y-Dt-GEZ" secondAttribute="bottom" constant="142" id="WGp-bc-B98"/>
+                            <constraint firstItem="aUc-PV-nsF" firstAttribute="leading" secondItem="U1F-Z1-bjT" secondAttribute="leading" constant="134" id="uao-wz-aSS"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="768" height="1024"/>
+                    <connections>
+                        <outlet property="_inviteNavigationBar" destination="oLi-sU-2qV" id="6WA-Nm-zvp"/>
+                        <outlet property="_inviteNavigationItem" destination="Ber-UF-ejf" id="GTs-1h-9DK"/>
+                        <outlet property="rootView" destination="7lk-bs-ZJf" id="njD-6s-o6t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RmW-Hc-V1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-365" y="-136"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_close_24.png" width="24" height="24"/>
+        <image name="ic_send_24.png" width="24" height="24"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

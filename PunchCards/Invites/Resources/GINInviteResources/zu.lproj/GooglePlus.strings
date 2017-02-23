@@ -1,0 +1,70 @@
+/* The title that appears on top of the invite widget. The placeholder text
+    will have the third party app name */
+"GINInviteTitle" = "Memela abantu ku-%@";
+/* The title of the suggestions section in the invite widget. "Suggestions"
+    refers to the suggested invitees. "from Google" means invitees are
+    suggested by Google. */
+"GINInviteSuggestionSectionTitle" = "Iziphakamiso ezivela ku-Google";
+/* The title of the everyone section in the invite widget */
+"GINInviteEveryoneSectionTitle" = "Wonke umuntu";
+/* The title of the done button in the invite widget */
+"GINInviteDoneButton" = "Kwenziwe";
+/* The title of the send button in the invite widget */
+"GINInviteSendButton" = "THUMELA";
+/* The title of the cancel button in the invite widget */
+"GINInviteCancelButton" = "Khansela";
+/* The title of the edit button in the invite widget */
+"GINInviteEditButton" = "Hlela";
+/* The title of the invitation message view in the invite widget */
+"GINInviteMessageViewTitle" = "Umlayezo:";
+/* The placeholder text for the search field in the invide widget */
+"GINInviteSearchFieldPlaceholder" = "Engeza igama, i-imeyili noma inombolo yefoni";
+/* The placeholder text for the search field in the invide widget when sending text is disabled */
+"GINInviteSearchFieldPlaceholderSMSDisabled" = "Engeza igama noma i-imeyili";
+/* The title of the SMS Cost Notice View in the invite widget */
+"GINInviteSMSCostTitle" = "Kunezindleko ezijwayelekile ze-SMS";
+/* The title of a button that dismisses an alert */
+"GINInviteDismissButtonTitle" = "KULUNGILE";
+/* The title of to label in the invite widget. "To" should be followed by
+    a list of people to invite to the app. */
+"GINInviteToLabel" = "Iya ku-";
+/* The title of more button in the invite widget. The placeholder "+%ld"
+    represents the number of people to invite to the app. */
+"GINInviteMoreButtonTitle" = "+%ld abanye";
+/* The title of label in channel picker view cell when its type is
+    notification */
+"GINInviteChannelPickerViewCellNotificationLabel" = "Nge-Google";
+/* The accessibility notification used when the user press on the send
+    button */
+"GINInviteAccessibilitySendingNotification" = "Iyathumela";
+/* The accissibility label for the hide keyboard button */
+"GINInviteHideKeyboardAccessibilityLabel" = "Fihla ikhibhodi";
+/* The error message displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorMessage" = "Umlayezo akufanele weqe izinhlamvu ezingu-%lu";
+/* The error title displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorTitle" = "Iphutha";
+/* The accessibility notification message that plays when someone is selected.
+    The first argument is the person name */
+"GINInviteACLSelected" = "%@ Ukhethiwe";
+/* The accessibility notification message that plays when someone is deleted.
+    The first argument is the person name. */
+"GINInviteACLDeleted" = "%@ Ususiwe";
+/* Singular form of character */
+"GINInviteCharacterSingular" = "uhlamvu";
+/* Plural form of character */
+"GINInviteCharacterPlural" = "izinhlamvu";
+/* The accessibility notification message that plays when the user starts
+    typing or when there are a few characters remaining. The first argument is
+    the number of characters. The second argument is either "character" or
+    "characters", depending on the number of characters. */
+"GINInviteMessageRemainCountNotificationLabel" = "%@ %@ ezisele";
+/* The accessibility notification message that plays when the user exceeds
+    character limit. The first argument is the number of characters.
+    The second argument is either "character" or "characters", depending on the
+     number of characters. */
+"GINInviteMessageExceedCountNotificationLabel" = "%@ %@ weqe umkhawulo wezinhlamvu";
+/* The accessibility label for deleting an invitee. The second argument is the
+    person name. */
+"GINInviteDeleteContact" = "Susa u-%@";
+/* The placeholder text for the message view in the invide widget */
+"GINInviteMessageViewPlaceholder" = "Engeza umlayezo";

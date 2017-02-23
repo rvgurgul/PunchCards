@@ -1,0 +1,23 @@
+/* The title that appears on top of the invite widget. The placeholder text will have the third party app name */
+"GINInviteTitle" = "Invite People to %@";
+
+/* The title of the suggestions section in the invite widget */
+"GINInviteSuggestionSectionTitle" = "Select people to invite";
+
+/* The subtitle of the suggestions section in the invite widget The placeholder text will have the third party app name */
+"GINInviteSuggestionSectionSubtitle" = "%@ will notify them via text message or email";
+
+/* The title of the everyone section in the invite widget */
+"GINInviteEveryoneSectionTitle" = "Everyone";
+
+/* The title of the done button in the invite widget */
+"GINInviteDoneButton" = "Done";
+
+/* The title of the send button in the invite widget */
+"GINInviteSendButton" = "Send";
+
+/* The title of the cancel button in the invite widget */
+"GINInviteCancelButton" = "Cancel";
+
+/* The title of the edit button in the invite widget */
+"GINInviteEditButton" = "Edit";

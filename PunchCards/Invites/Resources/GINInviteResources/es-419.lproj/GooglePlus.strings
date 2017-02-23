@@ -1,0 +1,70 @@
+/* The title that appears on top of the invite widget. The placeholder text
+    will have the third party app name */
+"GINInviteTitle" = "Invitar personas a %@";
+/* The title of the suggestions section in the invite widget. "Suggestions"
+    refers to the suggested invitees. "from Google" means invitees are
+    suggested by Google. */
+"GINInviteSuggestionSectionTitle" = "Sugerencias de Google";
+/* The title of the everyone section in the invite widget */
+"GINInviteEveryoneSectionTitle" = "Todos";
+/* The title of the done button in the invite widget */
+"GINInviteDoneButton" = "Listo";
+/* The title of the send button in the invite widget */
+"GINInviteSendButton" = "ENVIAR";
+/* The title of the cancel button in the invite widget */
+"GINInviteCancelButton" = "Cancelar";
+/* The title of the edit button in the invite widget */
+"GINInviteEditButton" = "Editar";
+/* The title of the invitation message view in the invite widget */
+"GINInviteMessageViewTitle" = "Mensaje:";
+/* The placeholder text for the search field in the invide widget */
+"GINInviteSearchFieldPlaceholder" = "Agregar nombre, correo o teléfono";
+/* The placeholder text for the search field in the invide widget when sending text is disabled */
+"GINInviteSearchFieldPlaceholderSMSDisabled" = "Agregar nombre o correo electrónico";
+/* The title of the SMS Cost Notice View in the invite widget */
+"GINInviteSMSCostTitle" = "Aplican los cargos estándar de SMS";
+/* The title of a button that dismisses an alert */
+"GINInviteDismissButtonTitle" = "Aceptar";
+/* The title of to label in the invite widget. "To" should be followed by
+    a list of people to invite to the app. */
+"GINInviteToLabel" = "Para";
+/* The title of more button in the invite widget. The placeholder "+%ld"
+    represents the number of people to invite to the app. */
+"GINInviteMoreButtonTitle" = "+%ld más";
+/* The title of label in channel picker view cell when its type is
+    notification */
+"GINInviteChannelPickerViewCellNotificationLabel" = "A través de Google";
+/* The accessibility notification used when the user press on the send
+    button */
+"GINInviteAccessibilitySendingNotification" = "Enviando";
+/* The accissibility label for the hide keyboard button */
+"GINInviteHideKeyboardAccessibilityLabel" = "Ocultar teclado";
+/* The error message displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorMessage" = "El mensaje no debe exceder los %lu caracteres";
+/* The error title displayed to the user when adding a long invite message */
+"GINInviteLongMessageErrorTitle" = "Error";
+/* The accessibility notification message that plays when someone is selected.
+    The first argument is the person name */
+"GINInviteACLSelected" = "%@ seleccionado";
+/* The accessibility notification message that plays when someone is deleted.
+    The first argument is the person name. */
+"GINInviteACLDeleted" = "%@ eliminado";
+/* Singular form of character */
+"GINInviteCharacterSingular" = "carácter";
+/* Plural form of character */
+"GINInviteCharacterPlural" = "caracteres";
+/* The accessibility notification message that plays when the user starts
+    typing or when there are a few characters remaining. The first argument is
+    the number of characters. The second argument is either "character" or
+    "characters", depending on the number of characters. */
+"GINInviteMessageRemainCountNotificationLabel" = "%@ %@ restante(s)";
+/* The accessibility notification message that plays when the user exceeds
+    character limit. The first argument is the number of characters.
+    The second argument is either "character" or "characters", depending on the
+     number of characters. */
+"GINInviteMessageExceedCountNotificationLabel" = "Se excedió el límite en %@ %@";
+/* The accessibility label for deleting an invitee. The second argument is the
+    person name. */
+"GINInviteDeleteContact" = "¿Eliminar a %@?";
+/* The placeholder text for the message view in the invide widget */
+"GINInviteMessageViewPlaceholder" = "Agregar un mensaje";
