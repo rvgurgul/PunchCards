@@ -43,6 +43,7 @@
 /* Begin PBXFileReference section */
 		20B578F6F5FCD335DBBA5E96 /* Pods-PunchCards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PunchCards.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PunchCards/Pods-PunchCards.debug.xcconfig"; sourceTree = "<group>"; };
 		34D09AF5CD40BB3A3B4582F9 /* Pods-PunchCards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PunchCards.release.xcconfig"; path = "Pods/Target Support Files/Pods-PunchCards/Pods-PunchCards.release.xcconfig"; sourceTree = "<group>"; };
+		3F406B7F1E608B8100A343E6 /* PunchCards-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PunchCards-Bridging-Header.h"; sourceTree = "<group>"; };
 		3F4DE9DB1E5DE43B00A7EA4F /* PunchCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchCardCell.swift; sourceTree = "<group>"; };
 		3F4DE9DD1E5DE8A600A7EA4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FC9AC3C1E5DF3DA00BCF674 /* Punch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Punch.swift; sourceTree = "<group>"; };
@@ -132,6 +133,7 @@
 				3FCAF1381E5C940C00A80565 /* LaunchScreen.storyboard */,
 				3FCAF13B1E5C940C00A80565 /* Info.plist */,
 				3F4DE9DD1E5DE8A600A7EA4F /* GoogleService-Info.plist */,
+				3F406B7F1E608B8100A343E6 /* PunchCards-Bridging-Header.h */,
 			);
 			path = PunchCards;
 			sourceTree = "<group>";
@@ -254,6 +256,7 @@
 				TargetAttributes = {
 					3FCAF12B1E5C940B00A80565 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					3FCAF13F1E5C940C00A80565 = {
@@ -632,7 +635,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -676,7 +679,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -690,6 +693,7 @@
 			baseConfigurationReference = 20B578F6F5FCD335DBBA5E96 /* Pods-PunchCards.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PunchCards/Database",
@@ -706,8 +710,14 @@
 				);
 				INFOPLIST_FILE = PunchCards/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = MobileApps.PunchCards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PunchCards/PunchCards-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -717,6 +727,7 @@
 			baseConfigurationReference = 34D09AF5CD40BB3A3B4582F9 /* Pods-PunchCards.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PunchCards/Database",
@@ -733,8 +744,13 @@
 				);
 				INFOPLIST_FILE = PunchCards/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = MobileApps.PunchCards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PunchCards/PunchCards-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

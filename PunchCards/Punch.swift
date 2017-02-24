@@ -2,33 +2,41 @@
 //  Punch.swift
 //  PunchCards
 //
-//  Created by Richie Gurgul on 2/21/17.
+//  Created by Richie Gurgul on 2/22/17.
 //  Copyright © 2017 Richie Gurgul. All rights reserved.
 //
 
 import Foundation
-import UIKit
 
+//These are the things that get saved locally onto the device.
 class Punch: NSCoding
 {
     var date: Date!
-    var desc: String!
+    var name: String!
+    var code: String!
+    var val: Int!
     
-    init(desc: String)
+    init(name: String, code: String, val: Int!)
     {
         self.date = Date()
-        self.desc = desc
+        self.name = name
+        self.code = code
+        self.val  = val
     }
     
     required init?(coder aDecoder: NSCoder)
     {
         self.date = aDecoder.decodeObject(forKey: "date") as! Date
-        self.desc = aDecoder.decodeObject(forKey: "desc") as! String
+        self.name = aDecoder.decodeObject(forKey: "name") as! String
+        self.code = aDecoder.decodeObject(forKey: "code") as! String
+        self.val  = aDecoder.decodeInteger(forKey: "val")
     }
     
     func encode(with aCoder: NSCoder)
     {
         aCoder.encode(date, forKey: "date")
-        aCoder.encode(desc, forKey: "desc")
+        aCoder.encode(name, forKey: "name")
+        aCoder.encode(code, forKey: "code")
+        aCoder.encode(val , forKey: "val" )
     }
 }

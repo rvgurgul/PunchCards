@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate
 {
@@ -68,10 +67,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return UIDevice.current.name
     }
     
+    var ref: FIRDatabaseReference
+    {
+        return FIRDatabase.database().reference()
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        FIRApp.configure()
         
         print("ID: \(userID)")
         
@@ -82,7 +85,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         {
             punchCards = saved
         }
-
         
     }
     
