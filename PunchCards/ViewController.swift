@@ -39,32 +39,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
      Stretch 3: The punch cards will be 100% customizable based on the business needs.
      -
      
-     UUIDUUID-UUID-UUID-UUID-UUIDUUIDUUID-DeviceName
-     A7988A16-6C89-4811-93D6-BA5A1E048ED9-RGurgul
+     UUIDUUID-UUID-UUID-UUID-UUIDUUIDUUID
+     A7988A16-6C89-4811-93D6-BA5A1E048ED9
 
      */
     
     var punchCards = [PunchCard]()
     
-    var userID: String
+    var userID: String?
     {
-        //If the user already has a custom id, return it
-        if let uuid = UserDefaults.standard.string(forKey: "id")
-        {
-            return uuid + "-" + deviceName
-        }
-        //Otherwise, generate a new custom id and store it
-        else
-        {
-            let randomID = UUID().uuidString
-            UserDefaults.standard.set(randomID, forKey: "id")
-            return randomID + "-" + deviceName
-        }
-    }
-    
-    var deviceName: String
-    {
-        return UIDevice.current.name
+        return UserDefaults.standard.string(forKey: "id")
     }
     
     var ref: FIRDatabaseReference
@@ -76,8 +60,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     {
         super.viewDidLoad()
         
-        print("ID: \(userID)")
-        
         cardCollection.dataSource = self
         cardCollection.delegate = self
         
@@ -86,6 +68,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             punchCards = saved
         }
         
+        UserDefaults.standard.removeObject(forKey: "id")
+        if userID == nil
+        {
+            UserDefaults.standard.set(UUID().uuidString, forKey: "id")
+            //Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(setUsername), userInfo: nil, repeats: false)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
@@ -105,6 +93,35 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return punchCards.count
+    }
+    
+    func set(_ key: String, to val: Any) {ref.updateChildValues([key: val])}
+    func get(_ key: String) -> Any?
+    {
+        var result: Any? = nil
+        ref.child(key).observeSingleEvent(of: .value, with:
+        {   (snapshot) in
+            result = snapshot.value
+        })
+        {   (error) in
+            print("ERROR: \(error.localizedDescription)")
+        }
+        return result
+    }
+    
+    func setUsername()
+    {
+        let alert = UIAlertController(title: "Choose a username.", message: nil, preferredStyle: .alert)
+        alert.addTextField()
+        alert.addAction(UIAlertAction(title: "Set", style: .default, handler:
+        {   _ in
+            if let input = alert.textFields?[0].text
+            {
+                //if someone already has the username, call setUsername again
+                //else set all-users/their UUID to their username
+            }
+        }))
+        present(alert, animated: true, completion: nil)
     }
 }
 
