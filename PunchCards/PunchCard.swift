@@ -15,14 +15,17 @@ class PunchCard
     var name: String!
     var image: UIImage!
     var adminID: String!
-    //var codes: [custom code class]
-    //var rewards: [String:Int]
+//    var codes: [custom code class]
+    var rewards: [String:Int]
                  //["Free Stuff": 5]
     
-    init(name: String, data: Data)
+    init(name: String, data: String, rewards: [String:Int])
     {
+        let url = URL(string: data)
+        let data = try? Data(contentsOf: url!, options : [])
         self.name = name
-        self.image = UIImage(data: data)!
+        self.image = UIImage(data: data!)!
+        self.rewards = rewards
     }
     
     /*

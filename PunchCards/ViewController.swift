@@ -56,6 +56,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return FIRDatabase.database().reference()
     }
     
+    var handle: FIRDatabaseHandle?
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -74,8 +76,27 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             UserDefaults.standard.set(UUID().uuidString, forKey: "id")
             //Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(setUsername), userInfo: nil, repeats: false)
         }
-    }
     
+        handle = ref.child("test").observe(.value, with: { (snapshot) in
+            if let item = snapshot.value as? NSDictionary
+            {
+                let username = item["admin"] as? String ?? ""
+                print(username)
+                let codes = item["codes"] as? NSDictionary
+                print(codes!)
+                let rewards = item["rewards"] as? NSDictionary
+                print(rewards!)
+                let points = item["points"] as? NSDictionary
+                print(points!)
+                let image = item["image"] as? String ?? ""
+                print(image)
+                
+                self.punchCards.append(PunchCard(name: username, data: image, rewards: rewards as! [String : Int]))
+            }
+            
+        })
+        
+    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         
@@ -96,6 +117,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func set(_ key: String, to val: Any) {ref.updateChildValues([key: val])}
+    
     func get(_ key: String) -> Any?
     {
         var result: Any? = nil
@@ -124,4 +146,3 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         present(alert, animated: true, completion: nil)
     }
 }
-
