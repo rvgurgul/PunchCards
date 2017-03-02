@@ -13,29 +13,48 @@ import UIKit
 class PunchCard
 {
     var name: String!
-    var image: UIImage!
+    var image: UIImage?
     var adminID: String!
-//    var codes: [custom code class]
-    var rewards: [String:Int]
-                 //["Free Stuff": 5]
+    var rewards: [String:Int]!
+    var codes: [String:[String:Int]]!
     
-    init(name: String, data: String, rewards: [String:Int])
+    init(name: String, dict: [String:Any])
     {
-        let url = URL(string: data)
-        let data = try? Data(contentsOf: url!, options : [])
         self.name = name
-        self.image = UIImage(data: data!)!
-        self.rewards = rewards
+        
+        if let temp = dict["admin"] as? String {
+            self.adminID = temp
+        }
+        
+        if let temp = dict["image"] as? String {
+            if let url = URL(string: temp) {
+                if let data = try? Data(contentsOf: url) {
+                    self.image = UIImage(data: data)
+                }
+            }
+        }
+        
+        if let temp = dict["codes"] as? [String:[String:Int]] {
+            codes = temp
+        }
+        
+        if let temp = dict["rewards"] as? [String:Int] {
+            self.rewards = temp
+        }
     }
     
-    /*
-     init(Firebase reference?)
-     
-     get name
-     get image
-     get adminID
-     
-     
-     
-     */
+    func redeem(code: String) -> Punch?
+    {
+        if [String](codes.keys).contains(code)
+        {
+            //add to [punch]
+            var val = 1
+            if let dict = codes[code]
+            {
+                val = dict["value"]!
+            }
+            return Punch(name: name, code: code, val: val)
+        }
+        return nil
+    }
 }

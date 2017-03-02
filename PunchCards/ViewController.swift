@@ -76,27 +76,33 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             UserDefaults.standard.set(UUID().uuidString, forKey: "id")
             //Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(setUsername), userInfo: nil, repeats: false)
         }
+        
+//        handle = ref.child("test").observe(.childAdded, with:
+//        {   (snapshot) in
+//            if let item = snapshot.value as? NSDictionary
+//            {
+//                let username = item["admin"] as? String ?? ""
+//                print(username)
+//                let codes = item["codes"] as? NSDictionary
+//                print(codes!)
+//                let rewards = item["rewards"] as? NSDictionary
+//                print(rewards!)
+//                let points = item["points"] as? NSDictionary
+//                print(points!)
+//                let image = item["image"] as? String ?? ""
+//                print(image)
+//                
+//                
+//                //self.punchCards.append(PunchCard(name: username, data: image, rewards: rewards as! [String : Int]))
+//            }
+        
+        //})
     
-        handle = ref.child("test").observe(.value, with: { (snapshot) in
-            if let item = snapshot.value as? NSDictionary
-            {
-                let username = item["admin"] as? String ?? ""
-                print(username)
-                let codes = item["codes"] as? NSDictionary
-                print(codes!)
-                let rewards = item["rewards"] as? NSDictionary
-                print(rewards!)
-                let points = item["points"] as? NSDictionary
-                print(points!)
-                let image = item["image"] as? String ?? ""
-                print(image)
-                
-                self.punchCards.append(PunchCard(name: username, data: image, rewards: rewards as! [String : Int]))
-            }
-            
-        })
+        set("test/peter/is", to: "bad")
+        print(get("test/peter/is"))
         
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         
@@ -121,13 +127,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func get(_ key: String) -> Any?
     {
         var result: Any? = nil
-        ref.child(key).observeSingleEvent(of: .value, with:
-        {   (snapshot) in
-            result = snapshot.value
+        ref.child(key).observeSingleEvent(of: .childAdded, with:
+        {   (snap) in
+            result = snap.value
+            print("Exists? \(snap.exists())")
+            print("Value: \(snap.value)")
         })
-        {   (error) in
-            print("ERROR: \(error.localizedDescription)")
-        }
         return result
     }
     
@@ -139,10 +144,30 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         {   _ in
             if let input = alert.textFields?[0].text
             {
-                //if someone already has the username, call setUsername again
-                //else set all-users/their UUID to their username
+                if self.usernameExists(input)
+                {
+                    self.setUsername()
+                }
+                else
+                {
+                    self.set("all-users/\(self.userID)", to: input)
+                }
             }
         }))
         present(alert, animated: true, completion: nil)
+    }
+    
+    func usernameExists(_ name: String) -> Bool
+    {
+        var names: [String]? = nil
+        ref.child("all-users").observe(.childAdded, with:
+        {   (snap) in
+            if let dict = snap.value as? [String:String]
+            {
+                names = [String](dict.values)
+            }
+        })
+        guard names != nil else {return true}
+        return names!.contains(name)
     }
 }
