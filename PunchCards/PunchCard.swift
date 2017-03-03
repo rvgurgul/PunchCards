@@ -43,17 +43,16 @@ class PunchCard
         }
     }
     
-    func redeem(code: String) -> Punch?
+    func redeem(code: String) -> Ticket?
     {
         if [String](codes.keys).contains(code)
         {
-            //add to [punch]
             var val = 1
             if let dict = codes[code]
             {
                 val = dict["value"]!
             }
-            return Punch(name: name, code: code, val: val)
+            return Ticket(name: name, code: code, val: val)
         }
         return nil
     }

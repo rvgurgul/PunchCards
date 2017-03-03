@@ -9,7 +9,7 @@
 import Foundation
 
 //These are the things that get saved locally onto the device.
-class Punch: NSCoding
+class Ticket: NSCoding
 {
     var date: Date!
     var name: String!

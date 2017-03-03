@@ -23,7 +23,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         - codes can have a # of uses or have an expiration date
      
      Punch-Out
-     - each punch card will have an image, a name, a goal, and a count
+     - each punch card will have an image, a name
      
      MVP: As a user I want an app that will be a digital punch cards for businesses that store and tracks rewards.
      - punchcards which the user has admin access to have are golden
@@ -45,11 +45,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
      */
     
     var punchCards = [PunchCard]()
-    
-    var userID: String?
-    {
-        return UserDefaults.standard.string(forKey: "id")
-    }
     
     var ref: FIRDatabaseReference
     {
@@ -74,7 +69,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if userID == nil
         {
             UserDefaults.standard.set(UUID().uuidString, forKey: "id")
-            //Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(setUsername), userInfo: nil, repeats: false)
+            Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(setUsername), userInfo: nil, repeats: false)
         }
         
 //        handle = ref.child("test").observe(.childAdded, with:
@@ -97,9 +92,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 //            }
         
         //})
-    
-        set("test/peter/is", to: "bad")
-        print(get("test/peter/is"))
         
     }
     
@@ -110,10 +102,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PunchCardCell
-        cell.imageCell.image = punchCards[indexPath.item].image
-        cell.nameLabel.text = punchCards[indexPath.item].name
-        //cell.detailLabel.text = "\(punchCards[indexPath.item].punches.count)"
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         return cell
     }
     
@@ -121,8 +110,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     {
         return punchCards.count
     }
-    
-    func set(_ key: String, to val: Any) {ref.updateChildValues([key: val])}
     
     func get(_ key: String) -> Any?
     {
@@ -150,7 +137,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 }
                 else
                 {
-                    self.set("all-users/\(self.userID)", to: input)
+                    //self.set("all-users/\(self.userID)", to: input)
                 }
             }
         }))

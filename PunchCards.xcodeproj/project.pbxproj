@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F4DE9DC1E5DE43B00A7EA4F /* PunchCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4DE9DB1E5DE43B00A7EA4F /* PunchCardCell.swift */; };
+		3F30417E1E687338008F139A /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F30417D1E687338008F139A /* MainVC.swift */; };
+		3F3041801E6879FD008F139A /* GlobalUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F30417F1E6879FD008F139A /* GlobalUtility.swift */; };
 		3F4DE9DE1E5DE8A600A7EA4F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F4DE9DD1E5DE8A600A7EA4F /* GoogleService-Info.plist */; };
-		3FC9AC3D1E5DF3DA00BCF674 /* Punch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC9AC3C1E5DF3DA00BCF674 /* Punch.swift */; };
+		3FC9AC3D1E5DF3DA00BCF674 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC9AC3C1E5DF3DA00BCF674 /* Ticket.swift */; };
 		3FCAF1301E5C940C00A80565 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAF12F1E5C940C00A80565 /* AppDelegate.swift */; };
 		3FCAF1321E5C940C00A80565 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAF1311E5C940C00A80565 /* ViewController.swift */; };
 		3FCAF1351E5C940C00A80565 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FCAF1331E5C940C00A80565 /* Main.storyboard */; };
@@ -43,10 +44,11 @@
 /* Begin PBXFileReference section */
 		20B578F6F5FCD335DBBA5E96 /* Pods-PunchCards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PunchCards.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PunchCards/Pods-PunchCards.debug.xcconfig"; sourceTree = "<group>"; };
 		34D09AF5CD40BB3A3B4582F9 /* Pods-PunchCards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PunchCards.release.xcconfig"; path = "Pods/Target Support Files/Pods-PunchCards/Pods-PunchCards.release.xcconfig"; sourceTree = "<group>"; };
+		3F30417D1E687338008F139A /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		3F30417F1E6879FD008F139A /* GlobalUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalUtility.swift; sourceTree = "<group>"; };
 		3F406B7F1E608B8100A343E6 /* PunchCards-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PunchCards-Bridging-Header.h"; sourceTree = "<group>"; };
-		3F4DE9DB1E5DE43B00A7EA4F /* PunchCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchCardCell.swift; sourceTree = "<group>"; };
 		3F4DE9DD1E5DE8A600A7EA4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3FC9AC3C1E5DF3DA00BCF674 /* Punch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Punch.swift; sourceTree = "<group>"; };
+		3FC9AC3C1E5DF3DA00BCF674 /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		3FCAF12C1E5C940C00A80565 /* PunchCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PunchCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCAF12F1E5C940C00A80565 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FCAF1311E5C940C00A80565 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,9 +126,10 @@
 			isa = PBXGroup;
 			children = (
 				3FCAF12F1E5C940C00A80565 /* AppDelegate.swift */,
-				3F4DE9DB1E5DE43B00A7EA4F /* PunchCardCell.swift */,
+				3F30417F1E6879FD008F139A /* GlobalUtility.swift */,
+				3F30417D1E687338008F139A /* MainVC.swift */,
 				3FCAF15D1E5C94B700A80565 /* PunchCard.swift */,
-				3FC9AC3C1E5DF3DA00BCF674 /* Punch.swift */,
+				3FC9AC3C1E5DF3DA00BCF674 /* Ticket.swift */,
 				3FCAF1311E5C940C00A80565 /* ViewController.swift */,
 				3FCAF1361E5C940C00A80565 /* Assets.xcassets */,
 				3FCAF1331E5C940C00A80565 /* Main.storyboard */,
@@ -536,10 +539,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FC9AC3D1E5DF3DA00BCF674 /* Punch.swift in Sources */,
+				3FC9AC3D1E5DF3DA00BCF674 /* Ticket.swift in Sources */,
+				3F30417E1E687338008F139A /* MainVC.swift in Sources */,
 				3FCAF15E1E5C94B700A80565 /* PunchCard.swift in Sources */,
 				3FCAF1321E5C940C00A80565 /* ViewController.swift in Sources */,
-				3F4DE9DC1E5DE43B00A7EA4F /* PunchCardCell.swift in Sources */,
+				3F3041801E6879FD008F139A /* GlobalUtility.swift in Sources */,
 				3FCAF1301E5C940C00A80565 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
