@@ -31,7 +31,7 @@ class MainVC: UITableViewController
     
 MVP: As a user I want an app that will be a digital punch cards for businesses that store and tracks rewards.
      - punchcards which the user has admin access to have are golden
-     - collectionview with each punchcard's image, title, and current punches displayed
+     - tableview with each punchcard's image, title, and current punches displayed
      - tap on one to see detailed information/tableview with each punch's date and description
      
 Stretch 1: The app will have an admin and user feature.
@@ -51,8 +51,6 @@ Stretch 2: Punches will be made secure via a password set by admin.
 Stretch 3: The punch cards will be 100% customizable based on the business needs.
         admin can set custom color
         admin can set image url
-     
-     
      
      */
     
@@ -91,7 +89,7 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
         actions.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(actions, animated: true, completion: nil)
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return cards.count
@@ -103,11 +101,19 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
         let card = cards[indexPath.row]
         
         cell.textLabel?.text = card.name
-        //cell.detailTextLabel?.text = //# of stored punches for this one
         
-        if let image = card.image
+        if let array = tickets[card.name]
         {
+            let count = array.count
+            cell.detailTextLabel?.text = "\(count)"
+        }
+        
+        if let image = card.image {
             cell.imageView?.image = image
+        }
+        
+        if card.adminID == userID {
+            cell.backgroundColor = UIColor(colorLiteralRed: 218/255, green: 165/255, blue: 32/255, alpha: 1)
         }
 
         return cell
@@ -116,13 +122,22 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         let card = cards[indexPath.row]
-        if userID == card.adminID
+        
+        if card.adminID == userID //admin
         {
-            //present admin VC
+            
         }
-        else
+        else //user
         {
-            //present user VC
+            performSegue(withIdentifier: "toUserView", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let vc = segue.destination as? UserMainVC
+        {
+            //vc.card =
         }
     }
     
@@ -150,6 +165,9 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
     
     func usernameExists(_ name: String) -> Bool
     {
+        ref.child("all-users").observe(.value, with: getValue as! (FIRDataSnapshot) -> Void)
+        
+        
         var names: [String]?
         ref.child("all-users").observe(.value, with:
         {   (snap) in
@@ -164,36 +182,9 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
         }
         return true
     }
-
-}
-
-/*
- Code redemption alert function
-  
- if let ticket = card.redeem(code)
- {
-    var plural = ""
-    if ticket.val > 1 
+    
+    func getValue(snapshot: FIRDataSnapshot) -> Any
     {
-        plural = "s"
+        return snapshot.value
     }
-     
-    let alert = UIAlertController(title: "Code Redeemed!", message: "This ticket is worth \(val) point\(plural).", preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: "My Tickets", style: .default, handler:
-    {   _ in
-        //present tickets VC
-    }))
-    alert.addAction(UIAlertAction(title: "See Rewards", style: .default, handler:
-    {   _ in
-        //present rewards VC
-    }
-    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-    present(alert, animated: true, completion: nil)
- }
- else
- {
-    let alert = UIAlertController(title: "Invalid Code.", message: nil, preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-    present(alert, animated: true, completion: nil)
- }
- */
+}

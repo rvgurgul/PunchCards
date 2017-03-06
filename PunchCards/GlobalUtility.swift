@@ -24,19 +24,19 @@ func set(_ val: Any, forKey key: String)
     ref.updateChildValues([key:val])
 }
 
-var punches = [String:[Ticket]]()
+var tickets = [String:[Ticket]]()
 
 func load()
 {
     if let data = UserDefaults.standard.object(forKey: "saved") as? [String:[Ticket]]
     {
-        punches = data
+        tickets = data
     }
 }
 
 func save()
 {
-    UserDefaults.standard.set(punches, forKey: "saved")
+    UserDefaults.standard.set(tickets, forKey: "saved")
 }
 
 var randomCode: String

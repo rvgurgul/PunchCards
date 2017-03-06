@@ -19,6 +19,8 @@
 		3FCAF1451E5C940C00A80565 /* PunchCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAF1441E5C940C00A80565 /* PunchCardsTests.swift */; };
 		3FCAF1501E5C940C00A80565 /* PunchCardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAF14F1E5C940C00A80565 /* PunchCardsUITests.swift */; };
 		3FCAF15E1E5C94B700A80565 /* PunchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAF15D1E5C94B700A80565 /* PunchCard.swift */; };
+		3FD8AB3B1E69CD3D00C4384F /* AdminMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8AB3A1E69CD3D00C4384F /* AdminMainVC.swift */; };
+		3FD8AB3D1E69CD4A00C4384F /* UserMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8AB3C1E69CD4A00C4384F /* UserMainVC.swift */; };
 		A25BACC78C2DC23A0C7C4C8F /* Pods_PunchCardsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2C69F911047D29E8353BEF /* Pods_PunchCardsTests.framework */; };
 		A94B9B2DCE4EAA5BB71A3CD5 /* Pods_PunchCardsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9BC79DE45531E648EB8D3DC /* Pods_PunchCardsUITests.framework */; };
 		AD3BB76EDC108D1D5036E4C9 /* Pods_PunchCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A22C6EC60239B6E972C473 /* Pods_PunchCards.framework */; };
@@ -63,6 +65,8 @@
 		3FCAF14F1E5C940C00A80565 /* PunchCardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunchCardsUITests.swift; sourceTree = "<group>"; };
 		3FCAF1511E5C940C00A80565 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FCAF15D1E5C94B700A80565 /* PunchCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchCard.swift; sourceTree = "<group>"; };
+		3FD8AB3A1E69CD3D00C4384F /* AdminMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminMainVC.swift; sourceTree = "<group>"; };
+		3FD8AB3C1E69CD4A00C4384F /* UserMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMainVC.swift; sourceTree = "<group>"; };
 		55899DE3ACC1BC15ECE16DAF /* Pods-PunchCardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PunchCardsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PunchCardsTests/Pods-PunchCardsTests.release.xcconfig"; sourceTree = "<group>"; };
 		60A22C6EC60239B6E972C473 /* Pods_PunchCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PunchCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		700A11C83103FDA1B3CBE697 /* Pods-PunchCardsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PunchCardsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PunchCardsUITests/Pods-PunchCardsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,11 +129,13 @@
 		3FCAF12E1E5C940C00A80565 /* PunchCards */ = {
 			isa = PBXGroup;
 			children = (
+				3FD8AB3A1E69CD3D00C4384F /* AdminMainVC.swift */,
 				3FCAF12F1E5C940C00A80565 /* AppDelegate.swift */,
 				3F30417F1E6879FD008F139A /* GlobalUtility.swift */,
 				3F30417D1E687338008F139A /* MainVC.swift */,
 				3FCAF15D1E5C94B700A80565 /* PunchCard.swift */,
 				3FC9AC3C1E5DF3DA00BCF674 /* Ticket.swift */,
+				3FD8AB3C1E69CD4A00C4384F /* UserMainVC.swift */,
 				3FCAF1311E5C940C00A80565 /* ViewController.swift */,
 				3FCAF1361E5C940C00A80565 /* Assets.xcassets */,
 				3FCAF1331E5C940C00A80565 /* Main.storyboard */,
@@ -539,6 +545,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD8AB3D1E69CD4A00C4384F /* UserMainVC.swift in Sources */,
+				3FD8AB3B1E69CD3D00C4384F /* AdminMainVC.swift in Sources */,
 				3FC9AC3D1E5DF3DA00BCF674 /* Ticket.swift in Sources */,
 				3F30417E1E687338008F139A /* MainVC.swift in Sources */,
 				3FCAF15E1E5C94B700A80565 /* PunchCard.swift in Sources */,

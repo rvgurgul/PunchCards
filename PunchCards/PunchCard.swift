@@ -45,12 +45,24 @@ class PunchCard
     
     func redeem(code: String) -> Ticket?
     {
-        if [String](codes.keys).contains(code)
+        if codes != nil && [String](codes.keys).contains(code)
         {
             var val = 1
-            if let dict = codes[code]
+            if var dict = codes[code]
             {
                 val = dict["value"]!
+                if let uses = dict["uses"]
+                {
+                    if uses - 1 <= 0
+                    {
+                        ref.child("all-groups/\(name!)/codes/\(code)").removeValue()
+                    }
+                    else
+                    {
+                        set(uses-1, forKey: "all-groups/\(name!)/codes/\(code)/uses")
+                        codes[code]?["uses"]? -= 1
+                    }
+                }
             }
             return Ticket(name: name, code: code, val: val)
         }
