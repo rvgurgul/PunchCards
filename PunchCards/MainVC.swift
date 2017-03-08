@@ -95,7 +95,7 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
         })
         
         
-        userID = nil
+        //userID = nil
         if userID == nil
         {
             Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(setUsername), userInfo: nil, repeats: false)

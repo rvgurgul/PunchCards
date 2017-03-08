@@ -85,6 +85,9 @@ class UserMainVC: UITableViewController
     
     @IBAction func backButton(_ sender: AnyObject)
     {
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainVC") as! MainVC
+        self.navigationController?.pushViewController(secondViewController, animated: true)
+        
         self.dismiss(animated: true, completion: nil)
     }
 
