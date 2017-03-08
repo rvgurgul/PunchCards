@@ -12,11 +12,11 @@ import UIKit
 //These will be created everytime the user loads the app.
 class PunchCard
 {
-    var name: String!
+    var name: String
+    var adminID: String
     var image: UIImage?
-    var adminID: String!
-    var rewards: [String:Int]!
-    var codes: [String:[String:Int]]!
+    var rewards: [String:Int]
+    var codes: [String:[String:Int]]
     
     init(name: String, dict: [String:Any])
     {
@@ -25,11 +25,14 @@ class PunchCard
         if let temp = dict["admin"] as? String {
             self.adminID = temp
         }
+        else{
+            self.adminID = ""
+        }
         
         if let temp = dict["image"] as? String {
             if let url = URL(string: temp) {
                 if let data = try? Data(contentsOf: url) {
-                    self.image = UIImage(data: data)
+                    self.image = UIImage(data: data)!
                 }
             }
         }
@@ -37,15 +40,21 @@ class PunchCard
         if let temp = dict["codes"] as? [String:[String:Int]] {
             codes = temp
         }
+        else{
+            codes = [String:[String:Int]]()
+        }
         
         if let temp = dict["rewards"] as? [String:Int] {
             self.rewards = temp
+        }
+        else{
+            self.rewards = [String:Int]()
         }
     }
     
     func redeem(code: String) -> Ticket?
     {
-        if codes != nil && [String](codes.keys).contains(code)
+        if [String](codes.keys).contains(code)
         {
             var val = 1
             if var dict = codes[code]
@@ -55,11 +64,11 @@ class PunchCard
                 {
                     if uses - 1 <= 0
                     {
-                        ref.child("all-groups/\(name!)/codes/\(code)").removeValue()
+                        ref.child("all-groups/\(name)/codes/\(code)").removeValue()
                     }
                     else
                     {
-                        set(uses-1, forKey: "all-groups/\(name!)/codes/\(code)/uses")
+                        set(uses-1, forKey: "all-groups/\(name)/codes/\(code)/uses")
                         codes[code]?["uses"]? -= 1
                     }
                 }

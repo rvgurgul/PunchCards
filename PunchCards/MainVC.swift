@@ -52,6 +52,27 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
         admin can set custom color
         admin can set image url
      
+     
+     TO DO:
+     - = necessary 
+     + = stretch
+     
+     - create punchcard creation menu/interface
+     - create punchcard admin interface
+        - list of codes
+            - add (manually or randomly)
+            - remove
+            + change values
+            + change uses
+        + set custom color(s)
+        + set image url
+     - create punchcard user interface
+        - redeem button
+        - list of redeemed tickets
+        + rewards page
+     
+     
+     
      */
     
     override func viewDidLoad()
@@ -59,7 +80,7 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
         super.viewDidLoad()
         load()
         
-        ref.child("all-groups").observe(.value, with:
+        ref.child("all-groups").observeSingleEvent(of: .value, with:
         {   (snap) in
             if let groups = snap.value as? [String:[String:Any]]
             {
@@ -73,6 +94,8 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
             self.tableView.reloadData()
         })
         
+        
+        userID = nil
         if userID == nil
         {
             Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(setUsername), userInfo: nil, repeats: false)
@@ -101,12 +124,7 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
         let card = cards[indexPath.row]
         
         cell.textLabel?.text = card.name
-        
-        if let array = tickets[card.name]
-        {
-            let count = array.count
-            cell.detailTextLabel?.text = "\(count)"
-        }
+        cell.detailTextLabel?.text = "Owner: \(card.adminID)"
         
         if let image = card.image {
             cell.imageView?.image = image
@@ -122,7 +140,6 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         let card = cards[indexPath.row]
-        
         if card.adminID == userID //admin
         {
             
@@ -137,7 +154,8 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
     {
         if let vc = segue.destination as? UserMainVC
         {
-            //vc.card =
+            let index = tableView.indexPathForSelectedRow?.row
+            vc.card = cards[index!]
         }
     }
     
@@ -149,42 +167,48 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
         {   _ in
             if let input = alert.textFields?[0].text
             {
-                if self.usernameExists(input)
-                {
-                    self.setUsername()
-                }
-                else
-                {
-                    UserDefaults.standard.set(UUID().uuidString, forKey: "id")
-                    set(input, forKey: "all-users/\(userID)")
-                }
+                self.usernameChecker(input)
             }
         }))
         present(alert, animated: true, completion: nil)
     }
     
-    func usernameExists(_ name: String) -> Bool
+    func usernameChecker(_ name: String)
     {
-        ref.child("all-users").observe(.value, with: getValue as! (FIRDataSnapshot) -> Void)
-        
-        
-        var names: [String]?
-        ref.child("all-users").observe(.value, with:
+        ref.child("all-users").observeSingleEvent(of: .value, with:
         {   (snap) in
             if let users = snap.value as? [String:String]
             {
-                names = [String](users.values)
+                let names = [String](users.values)
+                if names.contains(name)
+                {
+                    self.usernameFailure(name)
+                }
+                else
+                {
+                    self.usernameSuccess(name)
+                }
             }
         })
-        if names != nil
-        {
-            return names!.contains(name)
-        }
-        return true
     }
     
-    func getValue(snapshot: FIRDataSnapshot) -> Any
+    func usernameFailure(_ name: String)
     {
-        return snapshot.value
+        let alert = UIAlertController(title: "Access Denied", message: "The username \"\(name)\" is taken.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler:
+        {   _ in
+            self.setUsername()
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func usernameSuccess(_ name: String)
+    {
+        userID = UUID().uuidString
+        set(name, forKey: "all-users/\(userID!)")
+        
+        let alert = UIAlertController(title: "Access Granted", message: "Your username is \(name).", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }

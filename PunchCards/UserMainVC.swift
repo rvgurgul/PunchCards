@@ -26,12 +26,12 @@ class UserMainVC: UITableViewController
         
         navigationBar.title = card.name
         
-        guard tickets[card.name!] != nil else{
+        guard userTickets[card.name] != nil else{
             self.dismiss(animated: true, completion: nil)
             return
         }
         
-        tix = tickets[card.name!]
+        tix = userTickets[card.name]
     }
     
     @IBAction func actionsButton(_ sender: AnyObject)
@@ -50,7 +50,7 @@ class UserMainVC: UITableViewController
             {
                 if let ticket = self.card.redeem(code: code)
                 {
-                    tickets[self.card.name!]?.append(ticket)
+                    userTickets[self.card.name]?.append(ticket)
                     save()
                     
                     var plural = ""
@@ -100,7 +100,11 @@ class UserMainVC: UITableViewController
         let ticket = tix[indexPath.row]
         
         cell.textLabel?.text = ticket.code
-        cell.detailTextLabel?.text = "Redeemed on \(ticket.date!)"
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, h:mm a"
+        let date = formatter.string(from: ticket.date!)
+        cell.detailTextLabel?.text = "Redeemed on \(date)"
         
         return cell
     }

@@ -16,7 +16,14 @@ var ref: FIRDatabaseReference
 
 var userID: String?
 {
-    return UserDefaults.standard.string(forKey: "id")
+    set (value)
+    {
+        UserDefaults.standard.set(value, forKey: "id")
+    }
+    get
+    {
+        return UserDefaults.standard.string(forKey: "id")
+    }
 }
 
 func set(_ val: Any, forKey key: String)
@@ -24,35 +31,52 @@ func set(_ val: Any, forKey key: String)
     ref.updateChildValues([key:val])
 }
 
-var tickets = [String:[Ticket]]()
+func getValue(forKey key: String) -> Any?
+{
+    var result: Any?
+    ref.observeSingleEvent(of: .value, with:
+    {   (snap) in
+        result = snap.value
+    })
+    return result
+}
+
+var userTickets = [String:[Ticket]]()
 
 func load()
 {
     if let data = UserDefaults.standard.object(forKey: "saved") as? [String:[Ticket]]
     {
-        tickets = data
+        userTickets = data
     }
+    let tick1 = Ticket(name: "test", code: "ABCDEFG", val: 50)
+    let tick2 = Ticket(name: "test", code: "QRST", val: 1)
+    let tix1 = [tick1, tick2]
+    userTickets["test"] = tix1
 }
 
 func save()
 {
-    UserDefaults.standard.set(tickets, forKey: "saved")
+    UserDefaults.standard.set(userTickets, forKey: "saved")
 }
 
-var randomCode: String
+func randomCode() -> String
+{
+    return randomCode(withPattern: [3,3])
+}
+
+func randomCode(withPattern partitions: [Int]) -> String
 {
     var code = ""
-    var chars = [Character]("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".characters)
-    for _ in 0..<3 {
-        code += "\(chars[Int(arc4random_uniform(UInt32(chars.count)))])"
-    }
-    code += "-"
-    for _ in 0..<3 {
-        code += "\(chars[Int(arc4random_uniform(UInt32(chars.count)))])"
-    }
-    code += "-"
-    for _ in 0..<3 {
-        code += "\(chars[Int(arc4random_uniform(UInt32(chars.count)))])"
+    let chars = [Character]("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".characters)
+    for partition in partitions
+    {
+        for _ in 0..<partition
+        {
+            code += "\(chars[Int(arc4random_uniform(UInt32(chars.count)))])"
+        }
+        code += "-"
+        
     }
     return code
 }
