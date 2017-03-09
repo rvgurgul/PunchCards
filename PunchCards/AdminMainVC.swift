@@ -8,46 +8,83 @@
 
 import UIKit
 
-class AdminMainVC: UITableViewController {
-
-    var card: PunchCard?
+class AdminMainVC: UITableViewController
+{
+    var card: PunchCard!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        guard card != nil else
+        {
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    {
+        if section == 0
+        {
+            return "Active Codes"
+        }
+        else if section == 1
+        {
+            return "Rewards"
+        }
+        return ""
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func numberOfSections(in tableView: UITableView) -> Int
+    {
+        //0 = Active Codes
+        //1 = Rewards
+        return 2
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        if section == 0
+        {
+            return card.codes.count
+        }
+        else if section == 1
+        {
+            return card.rewards.count
+        }
         return 0
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "code", for: indexPath)
+        
+        if indexPath.section == 0
+        {
+            let code = [String](card.codes.keys)[indexPath.row]
+            cell.textLabel?.text = code
+            
+            if let values = card.codes[code]
+            {
+                let usesText = "Uses: \(values["uses"]!)"
+                let valueText = "Value: \(values["value"]!)"
+                cell.detailTextLabel?.text = "\(usesText)\n\(valueText)"
+            }
+        }
+        else if indexPath.section == 1
+        {
+            let reward = [String](card.rewards.keys)[indexPath.row]
+            cell.textLabel?.text = reward
+            
+            let price = [Int](card.rewards.values)[indexPath.row]
+            cell.detailTextLabel?.text = "\(price) tickets"
+        }
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

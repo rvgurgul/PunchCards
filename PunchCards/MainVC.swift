@@ -167,6 +167,7 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
                 }
             })
         }
+        selectedCard.printSelf()
     }
     
     func createCard()

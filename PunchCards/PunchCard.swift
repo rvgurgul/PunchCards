@@ -77,4 +77,21 @@ class PunchCard
         }
         return nil
     }
+    
+    func printSelf()
+    {
+        print("NAME: \(name)")
+        print("ADMIN: \(adminID)")
+        print("USERNAME: \(usernames[adminID])")
+        print("REWARDS:")
+        for reward in rewards
+        {
+            print("\t\(reward)")
+        }
+        print("CODES:")
+        for code in codes
+        {
+            print("\t\(code)")
+        }
+    }
 }
