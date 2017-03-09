@@ -41,6 +41,7 @@ func getValue(forKey key: String) -> Any?
     return result
 }
 
+var punchCards = [PunchCard]()
 var userTickets = [String:[Ticket]]()
 var usernames = [String:String]()
 
@@ -69,7 +70,7 @@ func save()
     UserDefaults.standard.set(userTickets, forKey: "saved")
 }
 
-func randomCode() -> String
+var randomCode: String
 {
     return randomCode(withPattern: [3,3])
 }
@@ -90,6 +91,14 @@ func randomCode(withPattern pattern: [Int]) -> String
         }
     }
     return code
+}
+
+var cancelAction: UIAlertAction{
+    return UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+}
+
+var dismissAction: UIAlertAction{
+    return UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
 }
 
 extension UIViewController

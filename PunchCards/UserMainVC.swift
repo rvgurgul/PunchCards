@@ -37,11 +37,11 @@ class UserMainVC: UITableViewController
         {   _ in
             //
         }))
-        actions.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actions.addAction(cancelAction)
         present(actions, animated: true, completion: nil)
     }
     
-    func redemption(_:UIAlertAction)
+    func redemption(_: UIAlertAction)
     {
         let alert = UIAlertController(title: "Enter a code:", message: "(case sensitive)", preferredStyle: .alert)
         alert.addTextField(configurationHandler: nil)
@@ -58,7 +58,10 @@ class UserMainVC: UITableViewController
                     
                     userTickets[self.card.name]?.append(ticket)
                     
-                    save()
+                    self.tix.append(ticket)
+                    self.tableView.reloadData()
+                    
+                    //save()
                     
                     var plural = ""
                     if ticket.val > 1
@@ -83,6 +86,7 @@ class UserMainVC: UITableViewController
 
             }
         }))
+        alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
     }
 
@@ -100,7 +104,7 @@ class UserMainVC: UITableViewController
         
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM d, h:mm a"
-        let date = formatter.string(from: ticket.date!)
+        let date = formatter.string(from: ticket.date)
         cell.detailTextLabel?.text = "Redeemed on \(date)"
         
         return cell

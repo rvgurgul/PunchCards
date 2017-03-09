@@ -11,10 +11,10 @@ import Foundation
 //These are the things that get saved locally onto the device.
 class Ticket: NSCoding
 {
-    var date: Date!
-    var name: String!
-    var code: String!
-    var val: Int!
+    var date: Date
+    var name: String
+    var code: String
+    var val: Int
     
     init(name: String, code: String, val: Int!)
     {

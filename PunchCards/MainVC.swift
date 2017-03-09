@@ -56,22 +56,30 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
      TO DO:
      - = necessary 
      + = stretch
+     # = done
      
-     - create punchcard creation menu/interface
-     - create punchcard admin interface
-        - list of codes
-            - add (manually or randomly)
-            - remove
+     # create punchcard creation menu/interface
+     # create punchcard admin interface
+        # list of codes
+            - add alert
+                - code text field
+                    - generate a random code if empty?
+            # remove
             + change values
-            + change uses
+            + change uses (both of these can be done with a single alert)
+        # list of rewards
+            - add alert
+                - name text field
+                - price text field
+            # remove
+            + change price
+                + alert
         + set custom color(s)
         + set image url
-     - create punchcard user interface
-        - redeem button
-        - list of redeemed tickets
+     # create punchcard user interface
+        - redeem button (redemption works, saving tickets does not)
+        # list of redeemed tickets
         + rewards page
-     
-     
      
      */
     
@@ -94,8 +102,6 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
             self.tableView.reloadData()
         })
         
-        
-        //userID = nil
         if userID == nil
         {
             Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(setUsername), userInfo: nil, repeats: false)
@@ -113,7 +119,7 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
         {   _ in
            self.setUsername()
         }))
-        actions.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actions.addAction(cancelAction)
         present(actions, animated: true, completion: nil)
     }
     
@@ -239,7 +245,7 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
         {   _ in
             self.createCard()
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
     }
     
@@ -292,7 +298,7 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
         set(name, forKey: "all-users/\(userID!)")
         
         let alert = UIAlertController(title: "Access Granted", message: "Your username is \(name).", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        alert.addAction(dismissAction)
         present(alert, animated: true, completion: nil)
     }
 }
