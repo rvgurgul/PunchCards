@@ -22,7 +22,7 @@ class PunchCard
     {
         self.name = name
         
-        if let temp = dict["admin"] as? String {
+        if let temp = dict["adminID"] as? String {
             self.adminID = temp
         }
         else{

@@ -42,6 +42,7 @@ func getValue(forKey key: String) -> Any?
 }
 
 var userTickets = [String:[Ticket]]()
+var usernames = [String:String]()
 
 func load()
 {
@@ -53,6 +54,14 @@ func load()
     let tick2 = Ticket(name: "test", code: "QRST", val: 1)
     let tix1 = [tick1, tick2]
     userTickets["test"] = tix1
+    
+    ref.child("all-users").observe(.value, with:
+    {   (snap) in
+        if let dict = snap.value as? [String:String]
+        {
+            usernames = dict
+        }
+    })
 }
 
 func save()
@@ -65,19 +74,33 @@ func randomCode() -> String
     return randomCode(withPattern: [3,3])
 }
 
-func randomCode(withPattern partitions: [Int]) -> String
+func randomCode(withPattern pattern: [Int]) -> String
 {
     var code = ""
     let chars = [Character]("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".characters)
-    for partition in partitions
+    for i in 0..<pattern.count
     {
-        for _ in 0..<partition
+        for _ in 0..<pattern[i]
         {
             code += "\(chars[Int(arc4random_uniform(UInt32(chars.count)))])"
         }
-        code += "-"
-        
+        if i + 1 < pattern.count
+        {
+            code += "-"
+        }
     }
     return code
+}
+
+extension UIViewController
+{
+    func goToView(withIdentifier id: String, handler: (UIViewController) -> Void)
+    {
+        if let nextVC = self.storyboard?.instantiateViewController(withIdentifier: id)
+        {
+            handler(nextVC)
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        }
+    }
 }
 

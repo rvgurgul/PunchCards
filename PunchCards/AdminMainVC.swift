@@ -10,6 +10,8 @@ import UIKit
 
 class AdminMainVC: UITableViewController {
 
+    var card: PunchCard?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

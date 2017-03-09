@@ -24,20 +24,21 @@ class UserMainVC: UITableViewController
             return
         }
         
+        tix = userTickets[card.name] ?? [Ticket]()
+        
         navigationBar.title = card.name
-        
-        guard userTickets[card.name] != nil else{
-            self.dismiss(animated: true, completion: nil)
-            return
-        }
-        
-        tix = userTickets[card.name]
     }
     
     @IBAction func actionsButton(_ sender: AnyObject)
     {
         let actions = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         actions.addAction(UIAlertAction(title: "Redeem a code", style: .default, handler: redemption))
+        actions.addAction(UIAlertAction(title: "See rewards", style: .default, handler:
+        {   _ in
+            //
+        }))
+        actions.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(actions, animated: true, completion: nil)
     }
     
     func redemption(_:UIAlertAction)
@@ -50,7 +51,13 @@ class UserMainVC: UITableViewController
             {
                 if let ticket = self.card.redeem(code: code)
                 {
+                    if userTickets[self.card.name] == nil
+                    {
+                        userTickets[self.card.name] = [Ticket]()
+                    }
+                    
                     userTickets[self.card.name]?.append(ticket)
+                    
                     save()
                     
                     var plural = ""
@@ -60,10 +67,6 @@ class UserMainVC: UITableViewController
                     }
                     
                     let success = UIAlertController(title: "Code Redeemed!", message: "This ticket is worth \(ticket.val) point\(plural).", preferredStyle: .alert)
-                    success.addAction(UIAlertAction(title: "My Tickets", style: .default, handler:
-                    {   _ in
-                        //present tickets VC
-                    }))
                     success.addAction(UIAlertAction(title: "See Rewards", style: .default, handler:
                     {   _ in
                         //present rewards VC
@@ -82,18 +85,9 @@ class UserMainVC: UITableViewController
         }))
         present(alert, animated: true, completion: nil)
     }
-    
-    @IBAction func backButton(_ sender: AnyObject)
-    {
-        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainVC") as! MainVC
-        self.navigationController?.pushViewController(secondViewController, animated: true)
-        
-        self.dismiss(animated: true, completion: nil)
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        if tix == nil {return 0}
         return tix.count
     }
 

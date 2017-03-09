@@ -107,7 +107,11 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
         let actions = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         actions.addAction(UIAlertAction(title: "Create Punch Card", style: .default, handler:
         {   _ in
-            //present newPunchCardVC
+            self.createCard()
+        }))
+        actions.addAction(UIAlertAction(title: "Change Username", style: .default, handler:
+        {   _ in
+           self.setUsername()
         }))
         actions.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(actions, animated: true, completion: nil)
@@ -124,7 +128,10 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
         let card = cards[indexPath.row]
         
         cell.textLabel?.text = card.name
-        cell.detailTextLabel?.text = "Owner: \(card.adminID)"
+        
+        if let name = usernames[card.adminID]{
+            cell.detailTextLabel?.text = "Owner: \(name)"
+        }
         
         if let image = card.image {
             cell.imageView?.image = image
@@ -139,24 +146,100 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let card = cards[indexPath.row]
-        if card.adminID == userID //admin
+        let selectedCard = cards[indexPath.row]
+        if selectedCard.adminID == userID //admin
         {
-            
+            goToView(withIdentifier: "AdminVC", handler:
+            {   (view) in
+                if let adminVC = view as? AdminMainVC
+                {
+                    adminVC.card = selectedCard
+                }
+            })
         }
         else //user
         {
-            performSegue(withIdentifier: "toUserView", sender: self)
+            goToView(withIdentifier: "UserVC", handler:
+            {   (view) in
+                if let userVC = view as? UserMainVC
+                {
+                    userVC.card = selectedCard
+                }
+            })
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    func createCard()
     {
-        if let vc = segue.destination as? UserMainVC
-        {
-            let index = tableView.indexPathForSelectedRow?.row
-            vc.card = cards[index!]
+        let alert = UIAlertController(title: "Create a Punch Card", message: "Enter a name:", preferredStyle: .alert)
+        alert.addTextField
+        {   (field) in
+            field.autocapitalizationType = .words
         }
+        alert.addAction(UIAlertAction(title: "Done", style: .default, handler:
+        {   _ in
+            if let input = alert.textFields?[0].text
+            {
+                self.cardChecker(input)
+            }
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func cardChecker(_ name: String)
+    {
+        ref.child("all-groups").observeSingleEvent(of: .value, with:
+        {   (snap) in
+            if let groups = snap.value as? [String:Any]
+            {
+                let names = [String](groups.keys)
+                if names.contains(name)
+                {
+                    self.cardFailure(name)
+                }
+                else
+                {
+                    self.cardSuccess(name)
+                }
+            }
+        })
+    }
+    
+    func cardSuccess(_ name: String)
+    {
+        let newCard = PunchCard(name: name, dict: ["adminID":userID])
+        cards.append(newCard)
+        tableView.reloadData()
+        
+        if let id = userID
+        {
+            set(id, forKey: "all-groups/\(name)/adminID")
+        }
+        
+        let alert = UIAlertController(title: "Card successfully added.", message: "You can now manage this card by selecting it.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Go to Admin Page", style: .default, handler:
+        {   _ in
+            self.goToView(withIdentifier: "adminVC", handler:
+            {   (view) in
+                if let vc = view as? AdminMainVC
+                {
+                    vc.card = newCard
+                }
+            })
+        }))
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func cardFailure(_ name: String)
+    {
+        let alert = UIAlertController(title: "Could not create card.", message: "One already exists with the name \(name).", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Try again", style: .default, handler:
+        {   _ in
+            self.createCard()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
     
     func setUsername()
@@ -204,7 +287,7 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
     
     func usernameSuccess(_ name: String)
     {
-        userID = UUID().uuidString
+        userID = userID ?? UUID().uuidString
         set(name, forKey: "all-users/\(userID!)")
         
         let alert = UIAlertController(title: "Access Granted", message: "Your username is \(name).", preferredStyle: .alert)
