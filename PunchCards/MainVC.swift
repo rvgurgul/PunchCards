@@ -61,9 +61,9 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
      # create punchcard creation menu/interface
      # create punchcard admin interface
         # list of codes
-            - add alert
-                - code text field
-                    - generate a random code if empty?
+            # add alert
+                # code text field
+                    # generate a random code if empty?
             # remove
             + change values
             + change uses (both of these can be done with a single alert)
@@ -77,7 +77,7 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
         + set custom color(s)
         + set image url
      # create punchcard user interface
-        - redeem button (redemption works, saving tickets does not)
+        # redeem button (redemption works, saving tickets does not)
         # list of redeemed tickets
         + rewards page
      
@@ -86,7 +86,6 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        load()
         
         ref.child("all-groups").observeSingleEvent(of: .value, with:
         {   (snap) in
@@ -97,9 +96,9 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
                 {
                     let dict = groups[name]!
                     self.cards.append(PunchCard(name: name, dict: dict))
+                    self.tableView.reloadData()
                 }
             }
-            self.tableView.reloadData()
         })
         
         if userID == nil
@@ -111,14 +110,8 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
     @IBAction func actionButton(_ sender: AnyObject)
     {
         let actions = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        actions.addAction(UIAlertAction(title: "Create Punch Card", style: .default, handler:
-        {   _ in
-            self.createCard()
-        }))
-        actions.addAction(UIAlertAction(title: "Change Username", style: .default, handler:
-        {   _ in
-           self.setUsername()
-        }))
+        actions.addAction(UIAlertAction(title: "Create Punch Card", style: .default, handler: self.createCard))
+        actions.addAction(UIAlertAction(title: "Change Username", style: .default, handler: self.setUsername))
         actions.addAction(cancelAction)
         present(actions, animated: true, completion: nil)
     }
@@ -135,6 +128,7 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
         
         cell.textLabel?.text = card.name
         
+        cell.detailTextLabel?.text = "Owner:"
         if let name = usernames[card.adminID]{
             cell.detailTextLabel?.text = "Owner: \(name)"
         }
@@ -176,7 +170,7 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
         selectedCard.printSelf()
     }
     
-    func createCard()
+    func createCard(_: UIAlertAction)
     {
         let alert = UIAlertController(title: "Create a Punch Card", message: "Enter a name:", preferredStyle: .alert)
         alert.addTextField
@@ -226,11 +220,11 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
         let alert = UIAlertController(title: "Card successfully added.", message: "You can now manage this card by selecting it.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Go to Admin Page", style: .default, handler:
         {   _ in
-            self.goToView(withIdentifier: "adminVC", handler:
+            self.goToView(withIdentifier: "AdminVC", handler:
             {   (view) in
-                if let vc = view as? AdminMainVC
+                if let adminVC = view as? AdminMainVC
                 {
-                    vc.card = newCard
+                    adminVC.card = newCard
                 }
             })
         }))
@@ -241,15 +235,12 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
     func cardFailure(_ name: String)
     {
         let alert = UIAlertController(title: "Could not create card.", message: "One already exists with the name \(name).", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Try again", style: .default, handler:
-        {   _ in
-            self.createCard()
-        }))
+        alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: self.createCard))
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
     }
     
-    func setUsername()
+    func setUsername(_: UIAlertAction)
     {
         let alert = UIAlertController(title: "Choose a username.", message: nil, preferredStyle: .alert)
         alert.addTextField()
@@ -285,10 +276,7 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
     func usernameFailure(_ name: String)
     {
         let alert = UIAlertController(title: "Access Denied", message: "The username \"\(name)\" is taken.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler:
-        {   _ in
-            self.setUsername()
-        }))
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: self.setUsername))
         present(alert, animated: true, completion: nil)
     }
     

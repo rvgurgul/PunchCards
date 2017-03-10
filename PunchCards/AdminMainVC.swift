@@ -57,13 +57,17 @@ class AdminMainVC: UITableViewController
         alert.addAction(UIAlertAction(title: "Add", style: .default, handler:
         {   _ in
             var code = random
-            if let text = alert.textFields?[0].text, text != ""
-            {
+            if let text = alert.textFields?[0].text{
+                if text != ""{
                 code = text
+                }
             }
             
-            let uses = Int((alert.textFields?[1].text)!) ?? 1
-            let value = Int((alert.textFields?[2].text)!) ?? 1
+            var uses = Int((alert.textFields?[1].text)!) ?? 1
+            var value = Int((alert.textFields?[2].text)!) ?? 1
+            
+            if uses <= 0 {uses = 1}
+            if value <= 0 {value = 1}
             
             let dict = ["uses": uses, "value": value]
             set(dict, forKey: "all-groups/\(self.card.name)/codes/\(code)")
@@ -89,7 +93,13 @@ class AdminMainVC: UITableViewController
         {   _ in
             if let name = alert.textFields?[0].text, let costText = alert.textFields?[1].text
             {
-                if let cost = Int(costText)
+                if name == ""
+                {
+                    let anotherAlert = UIAlertController(title: "Invalid Name", message: nil, preferredStyle: .alert)
+                    anotherAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: self.addReward))
+                    self.present(anotherAlert, animated: true, completion: nil)
+                }
+                else if let cost = Int(costText), cost > 0
                 {
                     set(cost, forKey: "all-groups/\(self.card.name)/rewards/\(name)")
                     self.card.rewards[name] = cost
@@ -97,11 +107,11 @@ class AdminMainVC: UITableViewController
                 }
                 else
                 {
-                    let anotherAlert = UIAlertController(title: "Invalid Price", message: nil, preferredStyle: .alert)
+                    let anotherAlert = UIAlertController(title: "Invalid Cost", message: "Should be an integer greater than 0.", preferredStyle: .alert)
                     anotherAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: self.addReward))
                     self.present(anotherAlert, animated: true, completion: nil)
                 }
-            }else{print("failure")}
+            }
         }))
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)

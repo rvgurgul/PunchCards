@@ -9,7 +9,7 @@
 import Foundation
 
 //These are the things that get saved locally onto the device.
-class Ticket: NSCoding
+class Ticket: NSObject, NSCoding
 {
     var date: Date
     var name: String

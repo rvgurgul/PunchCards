@@ -31,14 +31,24 @@ class UserMainVC: UITableViewController
     
     @IBAction func actionsButton(_ sender: AnyObject)
     {
-        let actions = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        actions.addAction(UIAlertAction(title: "Redeem a code", style: .default, handler: redemption))
+        let actions = UIAlertController(title: "Your tickets: \(valueSum)", message: nil, preferredStyle: .actionSheet)
         actions.addAction(UIAlertAction(title: "See rewards", style: .default, handler:
         {   _ in
             //
         }))
+        actions.addAction(UIAlertAction(title: "Redeem a code", style: .default, handler: redemption))
         actions.addAction(cancelAction)
         present(actions, animated: true, completion: nil)
+    }
+    
+    var valueSum: Int
+    {
+        var total = 0
+        for ticket in tix
+        {
+            total += ticket.val
+        }
+        return total
     }
     
     func redemption(_: UIAlertAction)
@@ -61,7 +71,7 @@ class UserMainVC: UITableViewController
                     self.tix.append(ticket)
                     self.tableView.reloadData()
                     
-                    //save()
+                    save()
                     
                     var plural = ""
                     if ticket.val > 1

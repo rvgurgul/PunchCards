@@ -37,16 +37,13 @@ var usernames = [String:String]()
 
 func load()
 {
-    if let data = UserDefaults.standard.object(forKey: "saved") as? [String:[Ticket]]
+    if let data = UserDefaults.standard.object(forKey: "saved") as? Data
     {
-        userTickets = data
+        let temp = NSKeyedUnarchiver.unarchiveObject(with: data) as! [String:[Ticket]]
+        userTickets = temp
     }
-    let tick1 = Ticket(name: "test", code: "ABCDEFG", val: 50)
-    let tick2 = Ticket(name: "test", code: "QRST", val: 1)
-    let tix1 = [tick1, tick2]
-    userTickets["test"] = tix1
     
-    ref.child("all-users").observe(.value, with:
+    ref.child("all-users").observeSingleEvent(of: .value, with:
     {   (snap) in
         if let dict = snap.value as? [String:String]
         {
@@ -57,7 +54,8 @@ func load()
 
 func save()
 {
-    UserDefaults.standard.set(userTickets, forKey: "saved")
+    let data = NSKeyedArchiver.archivedData(withRootObject: userTickets)
+    UserDefaults.standard.set(data, forKey: "saved")
 }
 
 var randomCode: String
