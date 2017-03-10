@@ -46,15 +46,65 @@ class AdminMainVC: UITableViewController
         {   (field) in
             field.placeholder = random
         }
+        alert.addTextField
+        {   (field) in
+            field.placeholder = "Uses (def. 1)"
+        }
+        alert.addTextField
+        {   (field) in
+            field.placeholder = "Value (def. 1)"
+        }
         alert.addAction(UIAlertAction(title: "Add", style: .default, handler:
         {   _ in
+            var code = random
+            if let text = alert.textFields?[0].text, text != ""
+            {
+                code = text
+            }
             
-        })
+            let uses = Int((alert.textFields?[1].text)!) ?? 1
+            let value = Int((alert.textFields?[2].text)!) ?? 1
+            
+            let dict = ["uses": uses, "value": value]
+            set(dict, forKey: "all-groups/\(self.card.name)/codes/\(code)")
+            self.card.codes[code] = dict
+            self.tableView.reloadData()
+        }))
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
     
     func addReward(_: UIAlertAction)
     {
-        
+        let alert = UIAlertController(title: "New Reward", message: nil, preferredStyle: .alert)
+        alert.addTextField
+        {   (field) in
+            field.placeholder = "Name"
+        }
+        alert.addTextField
+        {   (field) in
+            field.placeholder = "Cost"
+        }
+        alert.addAction(UIAlertAction(title: "Add", style: .default, handler:
+        {   _ in
+            if let name = alert.textFields?[0].text, let costText = alert.textFields?[1].text
+            {
+                if let cost = Int(costText)
+                {
+                    set(cost, forKey: "all-groups/\(self.card.name)/rewards/\(name)")
+                    self.card.rewards[name] = cost
+                    self.tableView.reloadData()
+                }
+                else
+                {
+                    let anotherAlert = UIAlertController(title: "Invalid Price", message: nil, preferredStyle: .alert)
+                    anotherAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: self.addReward))
+                    self.present(anotherAlert, animated: true, completion: nil)
+                }
+            }else{print("failure")}
+        }))
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?

@@ -31,16 +31,6 @@ func set(_ val: Any, forKey key: String)
     ref.updateChildValues([key:val])
 }
 
-func getValue(forKey key: String) -> Any?
-{
-    var result: Any?
-    ref.observeSingleEvent(of: .value, with:
-    {   (snap) in
-        result = snap.value
-    })
-    return result
-}
-
 var punchCards = [PunchCard]()
 var userTickets = [String:[Ticket]]()
 var usernames = [String:String]()
