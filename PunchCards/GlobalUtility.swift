@@ -31,7 +31,7 @@ func set(_ val: Any, forKey key: String)
     ref.updateChildValues([key:val])
 }
 
-var punchCards = [PunchCard]()
+var cards = [PunchCard]()
 var userTickets = [String:[Ticket]]()
 var usernames = [String:String]()
 
@@ -79,6 +79,20 @@ func randomCode(withPattern pattern: [Int]) -> String
         }
     }
     return code
+}
+
+func ticketValue(forCard card: PunchCard) -> Int
+{
+    if let tix = userTickets[card.name]
+    {
+        var value = 0
+        for ticket in tix
+        {
+            value += ticket.val
+        }
+        return value
+    }
+    return 0
 }
 
 var cancelAction: UIAlertAction{

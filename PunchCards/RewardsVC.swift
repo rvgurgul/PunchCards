@@ -10,10 +10,35 @@ import UIKit
 
 class RewardsVC: UITableViewController
 {
+    var card: PunchCard!
+    var ticketVal = 0
+    
+    var available = [String:Int]()
+    var unavailable = [String:Int]()
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        guard card != nil else
+        {
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+        
+        ticketVal = ticketValue(forCard: card)
+        
+        for reward in card.rewards{
+            if reward.value <= ticketVal{
+                available[reward.key] = reward.value
+            }
+            else{
+                unavailable[reward.key] = reward.value
+            }
+        }
+        
+        navigationItem.title = "Rewards"
+        navigationItem.prompt = "Your tickets: \(ticketVal)"
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int
@@ -22,66 +47,52 @@ class RewardsVC: UITableViewController
         //1 - Unavailable
         return 2
     }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    {
+        if section == 0{
+            return "Available"
+        }
+        
+        if section == 1{
+            return "Unavailable"
+        }
+        
+        return ""
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+        //AVAILABLE
+        if section == 0{
+            return available.count
+        }
+        
+        //UNAVAILABLE
+        if section == 1{
+            return unavailable.count
+        }
         
         return 0
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reward", for: indexPath)
+        
+        var dict = [String:Int]()
+        if indexPath.section == 0{
+            dict = available
+        }
+        else if indexPath.section == 1{
+            dict = unavailable
+        }
+        
+        let name = [String](dict.keys)[indexPath.row]
+        cell.textLabel?.text = name
+        let cost = "\([Int](dict.values)[indexPath.row])"
+        cell.detailTextLabel?.text = cost
 
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

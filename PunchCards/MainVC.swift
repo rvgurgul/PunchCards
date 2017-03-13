@@ -10,77 +10,37 @@ import UIKit
 
 class MainVC: UITableViewController
 {
-    var cards = [PunchCard]()
-    
     /*
      GITHUB:
      https://github.com/rvgurgul/PunchCards
      
      FIREBASE:
      https://punchcards-14936.firebaseio.com/
-     
-     all-users
-        UUID: "username"
-     all-groups
-        GROUP
-            admin: "UUID"
-            codes
-                String: Int
-            rewards
-                String: Int
     
-MVP: As a user I want an app that will be a digital punch cards for businesses that store and tracks rewards.
-     - punchcards which the user has admin access to have are golden
-     - tableview with each punchcard's image, title, and current punches displayed
-     - tap on one to see detailed information/tableview with each punch's date and description
+     =======================================================================================================
      
-Stretch 1: The app will have an admin and user feature.
-Stretch 2: Punches will be made secure via a password set by admin.
+     MVP: As a user I want an app that will be a digital punch cards for businesses that store and tracks rewards.
+        - User can create Cards that are stored onto a Google Firebase
+        - Redeemed tickets are locally saved on the device
      
-     - admin
-        the tableview will display the active codes
-        can manually enter a code
-        can generate a random code
+     Stretch 1: The app will have an admin and user feature.
+        - Users can manage the cards they create
+            - Can add/remove/edit codes with uses & values
+            - Can add/remove/edit rewards with prices
+        - Users can redeem codes in others' cards
+            - Can view rewards by availability
      
-     - user
-        the tableview will display the codes you have redeemed
-        can redeem codes
-        can view rewards
-        can view redeemed tickets
+     Stretch 2: Punches will be made secure via a password set by admin.
+        - Codes can be manually entered on the Admin page or can be randomly generated
      
-Stretch 3: The punch cards will be 100% customizable based on the business needs.
-        admin can set custom color
-        admin can set image url
+     Stretch 3: The punch cards will be 100% customizable based on the business needs.
+        - Codes can have their uses & values adjusted based on the Admin's needs
      
+     =======================================================================================================
      
-     TO DO:
-     - = necessary 
-     + = stretch
-     # = done
-     
-     # create punchcard creation menu/interface
-     # create punchcard admin interface
-        # list of codes
-            # add alert
-                # code text field
-                    # generate a random code if empty?
-            # remove
-            + change values
-            + change uses (both of these can be done with a single alert)
-        # list of rewards
-            - add alert
-                - name text field
-                - price text field
-            # remove
-            + change price
-                + alert
-        + set custom color(s)
-        + set image url
-     # create punchcard user interface
-        # redeem button (redemption works, saving tickets does not)
-        # list of redeemed tickets
-        + rewards page
-     
+     Known Issues:
+        - Usernames do not show up on the initial load, after creating a card/navigating through the app, they should appear.
+        - Codes are redeemable multiple times by 1 person, if I had more time to work on this app, this could be an easy fix.
      */
     
     override func viewDidLoad()
@@ -95,7 +55,7 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
                 for name in names
                 {
                     let dict = groups[name]!
-                    self.cards.append(PunchCard(name: name, dict: dict))
+                    cards.append(PunchCard(name: name, dict: dict))
                     self.tableView.reloadData()
                 }
             }
@@ -105,6 +65,12 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
         {
             Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(setUsername), userInfo: nil, repeats: false)
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
     }
     
     @IBAction func actionButton(_ sender: AnyObject)
@@ -147,17 +113,22 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         let selectedCard = cards[indexPath.row]
-        if selectedCard.adminID == userID //admin
+        
+        //admin
+        if selectedCard.adminID == userID
         {
             goToView(withIdentifier: "AdminVC", handler:
             {   (view) in
                 if let adminVC = view as? AdminMainVC
                 {
                     adminVC.card = selectedCard
+                    adminVC.cardIndex = indexPath.row
                 }
             })
         }
-        else //user
+            
+        //user
+        else
         {
             goToView(withIdentifier: "UserVC", handler:
             {   (view) in
@@ -167,6 +138,7 @@ Stretch 3: The punch cards will be 100% customizable based on the business needs
                 }
             })
         }
+        
         selectedCard.printSelf()
     }
     

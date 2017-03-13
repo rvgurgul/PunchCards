@@ -31,24 +31,20 @@ class UserMainVC: UITableViewController
     
     @IBAction func actionsButton(_ sender: AnyObject)
     {
-        let actions = UIAlertController(title: "Your tickets: \(valueSum)", message: nil, preferredStyle: .actionSheet)
+        let actions = UIAlertController(title: "Your tickets: \(ticketValue(forCard: card))", message: nil, preferredStyle: .actionSheet)
         actions.addAction(UIAlertAction(title: "See rewards", style: .default, handler:
         {   _ in
-            //
+            self.goToView(withIdentifier: "RewardVC", handler:
+            {   (view) in
+                if let rewardVC = view as? RewardsVC
+                {
+                    rewardVC.card = self.card
+                }
+            })
         }))
         actions.addAction(UIAlertAction(title: "Redeem a code", style: .default, handler: redemption))
         actions.addAction(cancelAction)
         present(actions, animated: true, completion: nil)
-    }
-    
-    var valueSum: Int
-    {
-        var total = 0
-        for ticket in tix
-        {
-            total += ticket.val
-        }
-        return total
     }
     
     func redemption(_: UIAlertAction)
@@ -82,7 +78,13 @@ class UserMainVC: UITableViewController
                     let success = UIAlertController(title: "Code Redeemed!", message: "This ticket is worth \(ticket.val) point\(plural).", preferredStyle: .alert)
                     success.addAction(UIAlertAction(title: "See Rewards", style: .default, handler:
                     {   _ in
-                        //present rewards VC
+                        self.goToView(withIdentifier: "RewardVC", handler:
+                        {   (view) in
+                            if let rewardVC = view as? RewardsVC
+                            {
+                                rewardVC.card = self.card
+                            }
+                        })
                     }))
                     success.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                     self.present(success, animated: true, completion: nil)
@@ -115,7 +117,7 @@ class UserMainVC: UITableViewController
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM d, h:mm a"
         let date = formatter.string(from: ticket.date)
-        cell.detailTextLabel?.text = "Redeemed on \(date)"
+        cell.detailTextLabel?.text = "Redeemed on \(date). Worth \(ticket.val) points."
         
         return cell
     }
